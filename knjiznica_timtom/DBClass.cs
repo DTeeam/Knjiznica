@@ -69,5 +69,22 @@ namespace knjiznica_timtom
 
             return list;
         }
+
+        public void deleteBook(Knjiga k)
+        {
+
+
+            conn.Open();
+
+            using (SQLiteCommand com = new SQLiteCommand(conn))
+            {
+                com.CommandText = "DELETE FROM books WHERE id = " + k.inventarna_stevilka + ";";
+                SQLiteDataReader getReader = com.ExecuteReader();
+                com.Dispose();
+            }
+
+            conn.Close();
+
+        }
     }
 }
