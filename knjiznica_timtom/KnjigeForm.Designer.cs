@@ -33,6 +33,9 @@ namespace knjiznica_timtom
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.book_listView = new System.Windows.Forms.ListView();
             this.st = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.change_button = new System.Windows.Forms.Button();
@@ -42,8 +45,6 @@ namespace knjiznica_timtom
             this.section_combo = new System.Windows.Forms.ComboBox();
             this.search_text = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -83,11 +84,13 @@ namespace knjiznica_timtom
             this.book_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.st,
             this.columnHeader1,
-            this.columnHeader2});
+            this.columnHeader2,
+            this.columnHeader3});
+            this.book_listView.FullRowSelect = true;
             this.book_listView.HideSelection = false;
             this.book_listView.Location = new System.Drawing.Point(24, 130);
             this.book_listView.Name = "book_listView";
-            this.book_listView.Size = new System.Drawing.Size(523, 249);
+            this.book_listView.Size = new System.Drawing.Size(417, 249);
             this.book_listView.TabIndex = 10;
             this.book_listView.TileSize = new System.Drawing.Size(10, 10);
             this.book_listView.UseCompatibleStateImageBehavior = false;
@@ -95,8 +98,23 @@ namespace knjiznica_timtom
             // 
             // st
             // 
-            this.st.Text = "Inventarna št.";
-            this.st.Width = 79;
+            this.st.Text = "Inventarna št.:";
+            this.st.Width = 84;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Naslov:";
+            this.columnHeader1.Width = 131;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Avtor:";
+            this.columnHeader2.Width = 120;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Na voljo:";
+            this.columnHeader3.Width = 71;
             // 
             // label2
             // 
@@ -164,7 +182,7 @@ namespace knjiznica_timtom
             // 
             this.search_text.Location = new System.Drawing.Point(24, 21);
             this.search_text.Name = "search_text";
-            this.search_text.Size = new System.Drawing.Size(403, 20);
+            this.search_text.Size = new System.Drawing.Size(391, 20);
             this.search_text.TabIndex = 1;
             // 
             // tabPage2
@@ -176,16 +194,6 @@ namespace knjiznica_timtom
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Uporabniki";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Naslov";
-            this.columnHeader1.Width = 128;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Avtor";
-            this.columnHeader2.Width = 111;
             // 
             // KnjigeForm
             // 
@@ -219,5 +227,6 @@ namespace knjiznica_timtom
         private System.Windows.Forms.ColumnHeader st;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
     }
 }
