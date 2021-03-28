@@ -16,7 +16,7 @@ namespace knjiznica_timtom
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PrijavaForm());
+            Application.Run(new KnjigeForm());
         }
     }
 }

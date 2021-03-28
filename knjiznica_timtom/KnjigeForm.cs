@@ -22,12 +22,21 @@ namespace knjiznica_timtom
 
         private void tabPage1_Enter(object sender, EventArgs e)
         {
-            book_listbox.Items.Clear();
+            book_listView.Items.Clear();
 
             booklist = db.GetAllBooks();
 
             foreach (Knjiga a in booklist)
-                book_listbox.Items.Add(a.inventarna_stevilka + " | " + a.naslov);
+            {
+                ListViewItem newList = new ListViewItem(a.inventarna_stevilka.ToString());
+
+                newList.SubItems.Add(a.naslov);
+                newList.SubItems.Add(a.avtor);
+
+                book_listView.Items.Add(newList);
+                //book_listView.Items.Add(a.inventarna_stevilka.ToString(), a.naslov);
+
+            }
         }
     }
 }

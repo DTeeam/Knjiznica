@@ -31,7 +31,10 @@ namespace knjiznica_timtom
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.book_listbox = new System.Windows.Forms.ListBox();
+            this.book_listView = new System.Windows.Forms.ListView();
+            this.st = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.change_button = new System.Windows.Forms.Button();
             this.delete_button = new System.Windows.Forms.Button();
             this.insert_button = new System.Windows.Forms.Button();
@@ -39,8 +42,8 @@ namespace knjiznica_timtom
             this.section_combo = new System.Windows.Forms.ComboBox();
             this.search_text = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -57,9 +60,9 @@ namespace knjiznica_timtom
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.book_listView);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.book_listbox);
             this.tabPage1.Controls.Add(this.change_button);
             this.tabPage1.Controls.Add(this.delete_button);
             this.tabPage1.Controls.Add(this.insert_button);
@@ -75,13 +78,43 @@ namespace knjiznica_timtom
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Enter += new System.EventHandler(this.tabPage1_Enter);
             // 
-            // book_listbox
+            // book_listView
             // 
-            this.book_listbox.FormattingEnabled = true;
-            this.book_listbox.Location = new System.Drawing.Point(24, 101);
-            this.book_listbox.Name = "book_listbox";
-            this.book_listbox.Size = new System.Drawing.Size(605, 290);
-            this.book_listbox.TabIndex = 7;
+            this.book_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.st,
+            this.columnHeader1,
+            this.columnHeader2});
+            this.book_listView.HideSelection = false;
+            this.book_listView.Location = new System.Drawing.Point(24, 130);
+            this.book_listView.Name = "book_listView";
+            this.book_listView.Size = new System.Drawing.Size(523, 249);
+            this.book_listView.TabIndex = 10;
+            this.book_listView.TileSize = new System.Drawing.Size(10, 10);
+            this.book_listView.UseCompatibleStateImageBehavior = false;
+            this.book_listView.View = System.Windows.Forms.View.Details;
+            // 
+            // st
+            // 
+            this.st.Text = "Inventarna št.";
+            this.st.Width = 79;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(21, 5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Iskalno polje:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(21, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Kategorije:";
             // 
             // change_button
             // 
@@ -144,23 +177,15 @@ namespace knjiznica_timtom
             this.tabPage2.Text = "Uporabniki";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // columnHeader1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Kategorije:";
+            this.columnHeader1.Text = "Naslov";
+            this.columnHeader1.Width = 128;
             // 
-            // label2
+            // columnHeader2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Iskalno polje:";
+            this.columnHeader2.Text = "Avtor";
+            this.columnHeader2.Width = 111;
             // 
             // KnjigeForm
             // 
@@ -188,8 +213,11 @@ namespace knjiznica_timtom
         private System.Windows.Forms.ComboBox section_combo;
         private System.Windows.Forms.TextBox search_text;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.ListBox book_listbox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListView book_listView;
+        private System.Windows.Forms.ColumnHeader st;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }
