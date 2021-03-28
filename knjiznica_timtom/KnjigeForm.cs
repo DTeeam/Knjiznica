@@ -26,7 +26,6 @@ namespace knjiznica_timtom
 
             booklist = db.GetAllBooks();
             //ListViewItem.UseItemStyleForSubItems Property
-            
 
             foreach (Knjiga a in booklist)
             {
@@ -45,10 +44,14 @@ namespace knjiznica_timtom
 
 
                 book_listView.Items.Add(newList);
-                
 
             }
+
         }
 
+        private void change_button_Click(object sender, EventArgs e)
+        {
+            book_listView.LabelEdit = true;
+        }
     }
 }

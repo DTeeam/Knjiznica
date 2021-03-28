@@ -45,6 +45,7 @@ namespace knjiznica_timtom
             this.section_combo = new System.Windows.Forms.ComboBox();
             this.search_text = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -61,6 +62,7 @@ namespace knjiznica_timtom
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.book_listView);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
@@ -88,6 +90,7 @@ namespace knjiznica_timtom
             this.columnHeader3});
             this.book_listView.FullRowSelect = true;
             this.book_listView.HideSelection = false;
+            this.book_listView.LabelEdit = true;
             this.book_listView.Location = new System.Drawing.Point(24, 130);
             this.book_listView.Name = "book_listView";
             this.book_listView.Size = new System.Drawing.Size(417, 249);
@@ -136,12 +139,13 @@ namespace knjiznica_timtom
             // 
             // change_button
             // 
-            this.change_button.Location = new System.Drawing.Point(645, 101);
+            this.change_button.Location = new System.Drawing.Point(447, 324);
             this.change_button.Name = "change_button";
             this.change_button.Size = new System.Drawing.Size(106, 23);
             this.change_button.TabIndex = 6;
-            this.change_button.Text = "Spremeni podatke";
+            this.change_button.Text = "Uredi";
             this.change_button.UseVisualStyleBackColor = true;
+            this.change_button.Click += new System.EventHandler(this.change_button_Click);
             // 
             // delete_button
             // 
@@ -195,6 +199,15 @@ namespace knjiznica_timtom
             this.tabPage2.Text = "Uporabniki";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(447, 356);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(106, 23);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Shrani";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // KnjigeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -228,5 +241,6 @@ namespace knjiznica_timtom
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.Button button2;
     }
 }
