@@ -112,5 +112,42 @@ namespace knjiznica_timtom
 
             return stanje;
         }
+
+        public List<Knjiga> GetAllAvaliableBooks()
+        {
+            List<Knjiga> list = new List<Knjiga>();
+
+            conn.Open();
+
+            using (SQLiteCommand com = new SQLiteCommand(conn))
+            {
+                com.CommandText = "SELECT b.*, r.state FROM books b  LEFT OUTER JOIN rents r ON b.id = r.book_id WHERE r.state IS NOT 1;";
+
+                SQLiteDataReader reader = com.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Knjiga a = new Knjiga();
+
+                    a.inventarna_stevilka = reader.GetInt32(0);
+                    a.naslov = reader.GetString(1);
+                    a.avtor = reader.GetString(6);
+                    a.izgubljena = reader.GetInt32(8);
+
+                    if (reader.IsDBNull(9))
+                        a.zasedena = 0;
+                    else
+                        a.zasedena = reader.GetInt32(9);
+
+                    list.Add(a);
+                }
+
+                com.Dispose();
+            }
+
+            conn.Close();
+
+            return list;
+        }
     }
 }

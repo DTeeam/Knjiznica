@@ -118,6 +118,15 @@ namespace knjiznica_timtom
             tabControl2.Enabled = true;
 
             update_list();
+
+            Clan a = clanilist[clani_combo.SelectedIndex];
+
+            ime_c_text.Text = a.ime;
+            priimek_c_text.Text = a.priimek;
+            tel_c_text.Text = a.telefon;
+            email_c_text.Text = a.email;
+            naslov_c_text.Text = a.naslov;
+            notes_c_text.Text = a.zapiski;
         }
 
         private void tabPage2_Enter(object sender, EventArgs e)
@@ -134,9 +143,9 @@ namespace knjiznica_timtom
         {
             int stanje = izposoje[izposoje_listview.SelectedItems[0].Index].stanje;
 
-            if(stanje == 1)
+            if (stanje == 1)
             {
-                return_butt.Enabled = true;
+               return_butt.Enabled = true;
             }
         }
 
@@ -158,6 +167,30 @@ namespace knjiznica_timtom
             }
 
             update_list();
+        }
+
+        private void izposoja_user_tab_Enter(object sender, EventArgs e)
+        {
+            book_list_iz.Items.Clear();
+            booklist = cb.GetAllAvaliableBooks();
+
+            foreach (Knjiga a in booklist)
+            {
+                ListViewItem newList = new ListViewItem(a.inventarna_stevilka.ToString());
+                newList.UseItemStyleForSubItems = false;
+
+                newList.SubItems.Add(a.naslov);
+                newList.SubItems.Add(a.avtor);
+                newList.SubItems.Add("");
+
+                if (a.zasedena == 1)
+                    newList.SubItems[3].BackColor = Color.Red;
+                else
+                    newList.SubItems[3].BackColor = Color.Green;
+
+                book_list_iz.Items.Add(newList);
+
+            }
         }
     }
 }
