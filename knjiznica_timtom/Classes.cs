@@ -17,5 +17,6 @@ namespace knjiznica_timtom
         public string zalozba { get; set; }
         public int izgubljena { get; set; }
         public int section_id { get; set; }
+        public int zasedena { get; set; }
     }
 }

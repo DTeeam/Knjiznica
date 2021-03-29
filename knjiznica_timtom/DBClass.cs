@@ -42,7 +42,7 @@ namespace knjiznica_timtom
 
             using (SQLiteCommand com = new SQLiteCommand(conn))
             {
-                com.CommandText = "SELECT * FROM books;";
+                com.CommandText = "SELECT b.*, r.state FROM books b  LEFT OUTER JOIN rents r ON b.id = r.book_id;";
 
                 SQLiteDataReader reader = com.ExecuteReader();
 
@@ -52,6 +52,12 @@ namespace knjiznica_timtom
 
                     a.inventarna_stevilka = reader.GetInt32(0);
                     a.naslov = reader.GetString(1);
+                    a.avtor = reader.GetString(6);
+                    a.izgubljena = reader.GetInt32(8);
+
+                    if (reader.IsDBNull(9))
+                        a.zasedena = 0;
+                    else a.zasedena = 1;
 
                     list.Add(a);
                 }
@@ -62,6 +68,23 @@ namespace knjiznica_timtom
             conn.Close();
 
             return list;
+        }
+
+        public void deleteBook(Knjiga k)
+        {
+
+
+            conn.Open();
+
+            using (SQLiteCommand com = new SQLiteCommand(conn))
+            {
+                com.CommandText = "DELETE FROM books WHERE id = " + k.inventarna_stevilka + ";";
+                SQLiteDataReader getReader = com.ExecuteReader();
+                com.Dispose();
+            }
+
+            conn.Close();
+
         }
     }
 }
