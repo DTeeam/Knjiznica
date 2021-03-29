@@ -88,10 +88,8 @@ namespace knjiznica_timtom
             }
         }
 
-        private void clani_combo_SelectedIndexChanged(object sender, EventArgs e)
+        private void update_list()
         {
-            tabControl2.Enabled = true;
-
             clan_id = clanilist[clani_combo.SelectedIndex].id;
 
             izposoje = cb.GetAllIzposojaForUser(clan_id);
@@ -115,6 +113,13 @@ namespace knjiznica_timtom
             }
         }
 
+        private void clani_combo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tabControl2.Enabled = true;
+
+            update_list();
+        }
+
         private void tabPage2_Enter(object sender, EventArgs e)
         {
             clanilist = cb.GetAllClani();
@@ -127,12 +132,32 @@ namespace knjiznica_timtom
 
         private void izposoje_listview_SelectedIndexChanged(object sender, EventArgs e)
         {
-            return_butt.Enabled = true;
+            int stanje = izposoje[izposoje_listview.SelectedItems[0].Index].stanje;
+
+            if(stanje == 1)
+            {
+                return_butt.Enabled = true;
+            }
         }
 
         private void return_butt_Click(object sender, EventArgs e)
         {
             return_butt.Enabled = false;
+
+            int id_izposoje = izposoje[izposoje_listview.SelectedItems[0].Index].id;
+
+            int stanje = cb.vrni(id_izposoje);
+
+            if(stanje == 0)
+            {
+                MessageBox.Show("Vrnjeno");
+            }
+            else
+            {
+                MessageBox.Show("Napaka");
+            }
+
+            update_list();
         }
     }
 }

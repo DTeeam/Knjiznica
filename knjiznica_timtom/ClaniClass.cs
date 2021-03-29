@@ -78,5 +78,39 @@ namespace knjiznica_timtom
 
             return list;
         }
+
+        public int vrni(int id_rent)
+        {
+            conn.Open();
+
+            int stanje = 1;
+
+            using (SQLiteCommand com = new SQLiteCommand(conn))
+            {
+                com.CommandText = "UPDATE rents SET state = 0 WHERE id = "+ id_rent +";";
+
+                com.ExecuteNonQuery();
+
+                com.Dispose();
+            }
+
+            using (SQLiteCommand comm = new SQLiteCommand(conn))
+            {
+                comm.CommandText = "SELECT state FROM rents WHERE id = " + id_rent + ";";
+
+                SQLiteDataReader reader = comm.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    stanje = reader.GetInt32(0);
+                }
+
+                comm.Dispose();
+            }
+
+            conn.Close();
+
+            return stanje;
+        }
     }
 }

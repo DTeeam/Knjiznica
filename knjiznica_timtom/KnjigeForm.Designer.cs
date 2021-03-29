@@ -310,8 +310,10 @@ namespace knjiznica_timtom
             this.book_title,
             this.stanje,
             this.date});
+            this.izposoje_listview.FullRowSelect = true;
             this.izposoje_listview.HideSelection = false;
             this.izposoje_listview.Location = new System.Drawing.Point(19, 68);
+            this.izposoje_listview.MultiSelect = false;
             this.izposoje_listview.Name = "izposoje_listview";
             this.izposoje_listview.Size = new System.Drawing.Size(324, 286);
             this.izposoje_listview.TabIndex = 0;
