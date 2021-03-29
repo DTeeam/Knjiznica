@@ -19,4 +19,16 @@ namespace knjiznica_timtom
         public int section_id { get; set; }
         public int zasedena { get; set; }
     }
+    
+    public class Clan
+    {
+        public int id { get; set; }
+        public string ime { get; set; }
+        public string priimek { get; set; }
+        public string telefon { get; set; }
+        public string naslov { get; set; }
+        public string email { get; set; }
+        public string zapiski { get; set; }
+
+    }
 }

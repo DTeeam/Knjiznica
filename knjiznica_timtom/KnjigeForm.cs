@@ -13,9 +13,15 @@ namespace knjiznica_timtom
     public partial class KnjigeForm : Form
     {
         List<Knjiga> booklist;
+        List<Clan> clanilist;
+
         Knjiga k = new Knjiga();
         DBClass db = new DBClass();
+        ClaniClass cb = new ClaniClass();
+
         int id = 0;
+        int clan_id = 0;
+
         public KnjigeForm()
         {
             InitializeComponent();
@@ -78,6 +84,25 @@ namespace knjiznica_timtom
 
                 book_listView.Items.Add(newList);
 
+            }
+        }
+
+        private void clani_combo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tabControl2.Enabled = true;
+
+            clan_id = clanilist[clani_combo.SelectedIndex].id;
+
+
+        }
+
+        private void tabPage2_Enter(object sender, EventArgs e)
+        {
+            clanilist = cb.GetAllClani();
+
+            foreach(Clan a in clanilist)
+            {
+                clani_combo.Items.Add(a.ime + " " + a.priimek);
             }
         }
     }

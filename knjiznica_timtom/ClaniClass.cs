@@ -1,0 +1,49 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.SQLite;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace knjiznica_timtom
+{
+    class ClaniClass
+    {
+        SQLiteConnection conn = new SQLiteConnection("data source=library_DB_testData.sqlite");
+
+        public List<Clan> GetAllClani()
+        {
+            List<Clan> list = new List<Clan>();
+
+            conn.Open();
+
+            using (SQLiteCommand com = new SQLiteCommand(conn))
+            {
+                com.CommandText = "SELECT * FROM users;";
+
+                SQLiteDataReader reader = com.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Clan a = new Clan();
+
+                    a.id = reader.GetInt32(0);
+                    a.ime = reader.GetString(1);
+                    a.priimek = reader.GetString(2);
+                    a.telefon = reader.GetString(3);
+                    a.naslov = reader.GetString(4);
+                    a.email = reader.GetString(5);
+                    a.zapiski = reader.GetString(6);
+                    
+                    list.Add(a);
+                }
+
+                com.Dispose();
+            }
+
+            conn.Close();
+
+            return list;
+        }
+    }
+}
