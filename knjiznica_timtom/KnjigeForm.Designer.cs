@@ -50,45 +50,59 @@ namespace knjiznica_timtom
             this.clani_combo = new System.Windows.Forms.ComboBox();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.stanje_user_tab = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
             this.return_butt = new System.Windows.Forms.Button();
             this.izposoje_listview = new System.Windows.Forms.ListView();
             this.book_title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.stanje = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.izposoja_user_tab = new System.Windows.Forms.TabPage();
-            this.changedata_user_tab = new System.Windows.Forms.TabPage();
-            this.label4 = new System.Windows.Forms.Label();
-            this.book_list_iz = new System.Windows.Forms.ListView();
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.izpsosodi = new System.Windows.Forms.Button();
-            this.dodaj_na_seznam = new System.Windows.Forms.Button();
-            this.odstranu_iz_seznama = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.ime_c_text = new System.Windows.Forms.TextBox();
-            this.priimek_c_text = new System.Windows.Forms.TextBox();
-            this.Ime = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.naslov_c_text = new System.Windows.Forms.TextBox();
-            this.tel_c_text = new System.Windows.Forms.TextBox();
+            this.odstranu_iz_seznama = new System.Windows.Forms.Button();
+            this.dodaj_na_seznam = new System.Windows.Forms.Button();
+            this.izpsosodi = new System.Windows.Forms.Button();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.book_list_iz = new System.Windows.Forms.ListView();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.changedata_user_tab = new System.Windows.Forms.TabPage();
+            this.zbrisi_user = new System.Windows.Forms.Button();
+            this.spremeni_podatke = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.notes_c_text = new System.Windows.Forms.TextBox();
             this.email_c_text = new System.Windows.Forms.TextBox();
-            this.spremeni_podatke = new System.Windows.Forms.Button();
-            this.zbrisi_user = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.naslov_c_text = new System.Windows.Forms.TextBox();
+            this.tel_c_text = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.Ime = new System.Windows.Forms.Label();
+            this.priimek_c_text = new System.Windows.Forms.TextBox();
+            this.ime_c_text = new System.Windows.Forms.TextBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dodaj_clana = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.notes_text = new System.Windows.Forms.TextBox();
+            this.mail_text = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.add_text = new System.Windows.Forms.TextBox();
+            this.tel_text = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.sur_text = new System.Windows.Forms.TextBox();
+            this.name_text = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -96,12 +110,14 @@ namespace knjiznica_timtom
             this.stanje_user_tab.SuspendLayout();
             this.izposoja_user_tab.SuspendLayout();
             this.changedata_user_tab.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(19, 17);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
@@ -319,6 +335,15 @@ namespace knjiznica_timtom
             this.stanje_user_tab.Text = "Stanje";
             this.stanje_user_tab.UseVisualStyleBackColor = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(19, 25);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(178, 17);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Izposojene / Vrnjene knjige";
+            // 
             // return_butt
             // 
             this.return_butt.Enabled = false;
@@ -382,142 +407,6 @@ namespace knjiznica_timtom
             this.izposoja_user_tab.UseVisualStyleBackColor = true;
             this.izposoja_user_tab.Enter += new System.EventHandler(this.izposoja_user_tab_Enter);
             // 
-            // changedata_user_tab
-            // 
-            this.changedata_user_tab.Controls.Add(this.zbrisi_user);
-            this.changedata_user_tab.Controls.Add(this.spremeni_podatke);
-            this.changedata_user_tab.Controls.Add(this.label11);
-            this.changedata_user_tab.Controls.Add(this.label12);
-            this.changedata_user_tab.Controls.Add(this.notes_c_text);
-            this.changedata_user_tab.Controls.Add(this.email_c_text);
-            this.changedata_user_tab.Controls.Add(this.label9);
-            this.changedata_user_tab.Controls.Add(this.label10);
-            this.changedata_user_tab.Controls.Add(this.naslov_c_text);
-            this.changedata_user_tab.Controls.Add(this.tel_c_text);
-            this.changedata_user_tab.Controls.Add(this.label8);
-            this.changedata_user_tab.Controls.Add(this.Ime);
-            this.changedata_user_tab.Controls.Add(this.priimek_c_text);
-            this.changedata_user_tab.Controls.Add(this.ime_c_text);
-            this.changedata_user_tab.Location = new System.Drawing.Point(4, 25);
-            this.changedata_user_tab.Name = "changedata_user_tab";
-            this.changedata_user_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.changedata_user_tab.Size = new System.Drawing.Size(1009, 391);
-            this.changedata_user_tab.TabIndex = 2;
-            this.changedata_user_tab.Text = "Spremeni podatke";
-            this.changedata_user_tab.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 25);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(178, 17);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Izposojene / Vrnjene knjige";
-            // 
-            // book_list_iz
-            // 
-            this.book_list_iz.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7});
-            this.book_list_iz.FullRowSelect = true;
-            this.book_list_iz.HideSelection = false;
-            this.book_list_iz.LabelEdit = true;
-            this.book_list_iz.Location = new System.Drawing.Point(28, 111);
-            this.book_list_iz.Margin = new System.Windows.Forms.Padding(4);
-            this.book_list_iz.MultiSelect = false;
-            this.book_list_iz.Name = "book_list_iz";
-            this.book_list_iz.Size = new System.Drawing.Size(411, 228);
-            this.book_list_iz.TabIndex = 17;
-            this.book_list_iz.TileSize = new System.Drawing.Size(10, 10);
-            this.book_list_iz.UseCompatibleStateImageBehavior = false;
-            this.book_list_iz.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Inventarna št.:";
-            this.columnHeader4.Width = 84;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Naslov:";
-            this.columnHeader5.Width = 131;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Avtor:";
-            this.columnHeader6.Width = 120;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Na voljo:";
-            this.columnHeader7.Width = 71;
-            // 
-            // listView2
-            // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader8,
-            this.columnHeader9,
-            this.columnHeader10});
-            this.listView2.FullRowSelect = true;
-            this.listView2.HideSelection = false;
-            this.listView2.LabelEdit = true;
-            this.listView2.Location = new System.Drawing.Point(566, 111);
-            this.listView2.Margin = new System.Windows.Forms.Padding(4);
-            this.listView2.MultiSelect = false;
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(411, 228);
-            this.listView2.TabIndex = 18;
-            this.listView2.TileSize = new System.Drawing.Size(10, 10);
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Inventarna št.:";
-            this.columnHeader8.Width = 84;
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Naslov:";
-            this.columnHeader9.Width = 131;
-            // 
-            // columnHeader10
-            // 
-            this.columnHeader10.Text = "Avtor:";
-            this.columnHeader10.Width = 120;
-            // 
-            // izpsosodi
-            // 
-            this.izpsosodi.Location = new System.Drawing.Point(717, 357);
-            this.izpsosodi.Name = "izpsosodi";
-            this.izpsosodi.Size = new System.Drawing.Size(75, 23);
-            this.izpsosodi.TabIndex = 19;
-            this.izpsosodi.Text = "Izposodi";
-            this.izpsosodi.UseVisualStyleBackColor = true;
-            // 
-            // dodaj_na_seznam
-            // 
-            this.dodaj_na_seznam.Enabled = false;
-            this.dodaj_na_seznam.Location = new System.Drawing.Point(463, 138);
-            this.dodaj_na_seznam.Name = "dodaj_na_seznam";
-            this.dodaj_na_seznam.Size = new System.Drawing.Size(75, 23);
-            this.dodaj_na_seznam.TabIndex = 20;
-            this.dodaj_na_seznam.Text = "Dodaj";
-            this.dodaj_na_seznam.UseVisualStyleBackColor = true;
-            // 
-            // odstranu_iz_seznama
-            // 
-            this.odstranu_iz_seznama.Enabled = false;
-            this.odstranu_iz_seznama.Location = new System.Drawing.Point(463, 207);
-            this.odstranu_iz_seznama.Name = "odstranu_iz_seznama";
-            this.odstranu_iz_seznama.Size = new System.Drawing.Size(75, 23);
-            this.odstranu_iz_seznama.TabIndex = 21;
-            this.odstranu_iz_seznama.Text = "Odstrani";
-            this.odstranu_iz_seznama.UseVisualStyleBackColor = true;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -565,69 +454,152 @@ namespace knjiznica_timtom
             this.textBox1.Size = new System.Drawing.Size(215, 22);
             this.textBox1.TabIndex = 22;
             // 
-            // ime_c_text
+            // odstranu_iz_seznama
             // 
-            this.ime_c_text.Location = new System.Drawing.Point(47, 65);
-            this.ime_c_text.Name = "ime_c_text";
-            this.ime_c_text.Size = new System.Drawing.Size(176, 22);
-            this.ime_c_text.TabIndex = 0;
+            this.odstranu_iz_seznama.Enabled = false;
+            this.odstranu_iz_seznama.Location = new System.Drawing.Point(463, 207);
+            this.odstranu_iz_seznama.Name = "odstranu_iz_seznama";
+            this.odstranu_iz_seznama.Size = new System.Drawing.Size(75, 23);
+            this.odstranu_iz_seznama.TabIndex = 21;
+            this.odstranu_iz_seznama.Text = "Odstrani";
+            this.odstranu_iz_seznama.UseVisualStyleBackColor = true;
             // 
-            // priimek_c_text
+            // dodaj_na_seznam
             // 
-            this.priimek_c_text.Location = new System.Drawing.Point(279, 65);
-            this.priimek_c_text.Name = "priimek_c_text";
-            this.priimek_c_text.Size = new System.Drawing.Size(176, 22);
-            this.priimek_c_text.TabIndex = 3;
+            this.dodaj_na_seznam.Enabled = false;
+            this.dodaj_na_seznam.Location = new System.Drawing.Point(463, 138);
+            this.dodaj_na_seznam.Name = "dodaj_na_seznam";
+            this.dodaj_na_seznam.Size = new System.Drawing.Size(75, 23);
+            this.dodaj_na_seznam.TabIndex = 20;
+            this.dodaj_na_seznam.Text = "Dodaj";
+            this.dodaj_na_seznam.UseVisualStyleBackColor = true;
             // 
-            // Ime
+            // izpsosodi
             // 
-            this.Ime.AutoSize = true;
-            this.Ime.Location = new System.Drawing.Point(47, 25);
-            this.Ime.Name = "Ime";
-            this.Ime.Size = new System.Drawing.Size(34, 17);
-            this.Ime.TabIndex = 6;
-            this.Ime.Text = "Ime:";
+            this.izpsosodi.Location = new System.Drawing.Point(717, 357);
+            this.izpsosodi.Name = "izpsosodi";
+            this.izpsosodi.Size = new System.Drawing.Size(75, 23);
+            this.izpsosodi.TabIndex = 19;
+            this.izpsosodi.Text = "Izposodi";
+            this.izpsosodi.UseVisualStyleBackColor = true;
             // 
-            // label8
+            // listView2
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(276, 25);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(58, 17);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Priimek:";
+            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader8,
+            this.columnHeader9,
+            this.columnHeader10});
+            this.listView2.FullRowSelect = true;
+            this.listView2.HideSelection = false;
+            this.listView2.LabelEdit = true;
+            this.listView2.Location = new System.Drawing.Point(566, 111);
+            this.listView2.Margin = new System.Windows.Forms.Padding(4);
+            this.listView2.MultiSelect = false;
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(411, 228);
+            this.listView2.TabIndex = 18;
+            this.listView2.TileSize = new System.Drawing.Size(10, 10);
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.View = System.Windows.Forms.View.Details;
             // 
-            // label9
+            // columnHeader8
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(276, 132);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 17);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "Naslov:";
+            this.columnHeader8.Text = "Inventarna št.:";
+            this.columnHeader8.Width = 84;
             // 
-            // label10
+            // columnHeader9
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(44, 132);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(60, 17);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "Telefon:";
+            this.columnHeader9.Text = "Naslov:";
+            this.columnHeader9.Width = 131;
             // 
-            // naslov_c_text
+            // columnHeader10
             // 
-            this.naslov_c_text.Location = new System.Drawing.Point(279, 172);
-            this.naslov_c_text.Name = "naslov_c_text";
-            this.naslov_c_text.Size = new System.Drawing.Size(176, 22);
-            this.naslov_c_text.TabIndex = 9;
+            this.columnHeader10.Text = "Avtor:";
+            this.columnHeader10.Width = 120;
             // 
-            // tel_c_text
+            // book_list_iz
             // 
-            this.tel_c_text.Location = new System.Drawing.Point(47, 172);
-            this.tel_c_text.Name = "tel_c_text";
-            this.tel_c_text.Size = new System.Drawing.Size(176, 22);
-            this.tel_c_text.TabIndex = 8;
+            this.book_list_iz.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7});
+            this.book_list_iz.FullRowSelect = true;
+            this.book_list_iz.HideSelection = false;
+            this.book_list_iz.LabelEdit = true;
+            this.book_list_iz.Location = new System.Drawing.Point(28, 111);
+            this.book_list_iz.Margin = new System.Windows.Forms.Padding(4);
+            this.book_list_iz.MultiSelect = false;
+            this.book_list_iz.Name = "book_list_iz";
+            this.book_list_iz.Size = new System.Drawing.Size(411, 228);
+            this.book_list_iz.TabIndex = 17;
+            this.book_list_iz.TileSize = new System.Drawing.Size(10, 10);
+            this.book_list_iz.UseCompatibleStateImageBehavior = false;
+            this.book_list_iz.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Inventarna št.:";
+            this.columnHeader4.Width = 84;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Naslov:";
+            this.columnHeader5.Width = 131;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Avtor:";
+            this.columnHeader6.Width = 120;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Na voljo:";
+            this.columnHeader7.Width = 71;
+            // 
+            // changedata_user_tab
+            // 
+            this.changedata_user_tab.Controls.Add(this.zbrisi_user);
+            this.changedata_user_tab.Controls.Add(this.spremeni_podatke);
+            this.changedata_user_tab.Controls.Add(this.label11);
+            this.changedata_user_tab.Controls.Add(this.label12);
+            this.changedata_user_tab.Controls.Add(this.notes_c_text);
+            this.changedata_user_tab.Controls.Add(this.email_c_text);
+            this.changedata_user_tab.Controls.Add(this.label9);
+            this.changedata_user_tab.Controls.Add(this.label10);
+            this.changedata_user_tab.Controls.Add(this.naslov_c_text);
+            this.changedata_user_tab.Controls.Add(this.tel_c_text);
+            this.changedata_user_tab.Controls.Add(this.label8);
+            this.changedata_user_tab.Controls.Add(this.Ime);
+            this.changedata_user_tab.Controls.Add(this.priimek_c_text);
+            this.changedata_user_tab.Controls.Add(this.ime_c_text);
+            this.changedata_user_tab.Location = new System.Drawing.Point(4, 25);
+            this.changedata_user_tab.Name = "changedata_user_tab";
+            this.changedata_user_tab.Padding = new System.Windows.Forms.Padding(3);
+            this.changedata_user_tab.Size = new System.Drawing.Size(1009, 391);
+            this.changedata_user_tab.TabIndex = 2;
+            this.changedata_user_tab.Text = "Spremeni podatke";
+            this.changedata_user_tab.UseVisualStyleBackColor = true;
+            // 
+            // zbrisi_user
+            // 
+            this.zbrisi_user.Location = new System.Drawing.Point(846, 352);
+            this.zbrisi_user.Name = "zbrisi_user";
+            this.zbrisi_user.Size = new System.Drawing.Size(147, 23);
+            this.zbrisi_user.TabIndex = 17;
+            this.zbrisi_user.Text = "Zbriši člana";
+            this.zbrisi_user.UseVisualStyleBackColor = true;
+            this.zbrisi_user.Click += new System.EventHandler(this.zbrisi_user_Click);
+            // 
+            // spremeni_podatke
+            // 
+            this.spremeni_podatke.Location = new System.Drawing.Point(163, 328);
+            this.spremeni_podatke.Name = "spremeni_podatke";
+            this.spremeni_podatke.Size = new System.Drawing.Size(159, 23);
+            this.spremeni_podatke.TabIndex = 16;
+            this.spremeni_podatke.Text = "Spremeni";
+            this.spremeni_podatke.UseVisualStyleBackColor = true;
+            this.spremeni_podatke.Click += new System.EventHandler(this.spremeni_podatke_Click);
             // 
             // label11
             // 
@@ -661,23 +633,198 @@ namespace knjiznica_timtom
             this.email_c_text.Size = new System.Drawing.Size(176, 22);
             this.email_c_text.TabIndex = 12;
             // 
-            // spremeni_podatke
+            // label9
             // 
-            this.spremeni_podatke.Location = new System.Drawing.Point(163, 328);
-            this.spremeni_podatke.Name = "spremeni_podatke";
-            this.spremeni_podatke.Size = new System.Drawing.Size(159, 23);
-            this.spremeni_podatke.TabIndex = 16;
-            this.spremeni_podatke.Text = "Spremeni";
-            this.spremeni_podatke.UseVisualStyleBackColor = true;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(276, 132);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 17);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Naslov:";
             // 
-            // zbrisi_user
+            // label10
             // 
-            this.zbrisi_user.Location = new System.Drawing.Point(846, 352);
-            this.zbrisi_user.Name = "zbrisi_user";
-            this.zbrisi_user.Size = new System.Drawing.Size(147, 23);
-            this.zbrisi_user.TabIndex = 17;
-            this.zbrisi_user.Text = "Zbriši člana";
-            this.zbrisi_user.UseVisualStyleBackColor = true;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(44, 132);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(60, 17);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "Telefon:";
+            // 
+            // naslov_c_text
+            // 
+            this.naslov_c_text.Location = new System.Drawing.Point(279, 172);
+            this.naslov_c_text.Name = "naslov_c_text";
+            this.naslov_c_text.Size = new System.Drawing.Size(176, 22);
+            this.naslov_c_text.TabIndex = 9;
+            // 
+            // tel_c_text
+            // 
+            this.tel_c_text.Location = new System.Drawing.Point(47, 172);
+            this.tel_c_text.Name = "tel_c_text";
+            this.tel_c_text.Size = new System.Drawing.Size(176, 22);
+            this.tel_c_text.TabIndex = 8;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(276, 25);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(58, 17);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Priimek:";
+            // 
+            // Ime
+            // 
+            this.Ime.AutoSize = true;
+            this.Ime.Location = new System.Drawing.Point(47, 25);
+            this.Ime.Name = "Ime";
+            this.Ime.Size = new System.Drawing.Size(34, 17);
+            this.Ime.TabIndex = 6;
+            this.Ime.Text = "Ime:";
+            // 
+            // priimek_c_text
+            // 
+            this.priimek_c_text.Location = new System.Drawing.Point(279, 65);
+            this.priimek_c_text.Name = "priimek_c_text";
+            this.priimek_c_text.Size = new System.Drawing.Size(176, 22);
+            this.priimek_c_text.TabIndex = 3;
+            // 
+            // ime_c_text
+            // 
+            this.ime_c_text.Location = new System.Drawing.Point(47, 65);
+            this.ime_c_text.Name = "ime_c_text";
+            this.ime_c_text.Size = new System.Drawing.Size(176, 22);
+            this.ime_c_text.TabIndex = 0;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.dodaj_clana);
+            this.tabPage3.Controls.Add(this.label7);
+            this.tabPage3.Controls.Add(this.label13);
+            this.tabPage3.Controls.Add(this.notes_text);
+            this.tabPage3.Controls.Add(this.mail_text);
+            this.tabPage3.Controls.Add(this.label14);
+            this.tabPage3.Controls.Add(this.label15);
+            this.tabPage3.Controls.Add(this.add_text);
+            this.tabPage3.Controls.Add(this.tel_text);
+            this.tabPage3.Controls.Add(this.label16);
+            this.tabPage3.Controls.Add(this.label17);
+            this.tabPage3.Controls.Add(this.sur_text);
+            this.tabPage3.Controls.Add(this.name_text);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1027, 495);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Dodaj ćlana";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // dodaj_clana
+            // 
+            this.dodaj_clana.Location = new System.Drawing.Point(157, 341);
+            this.dodaj_clana.Name = "dodaj_clana";
+            this.dodaj_clana.Size = new System.Drawing.Size(159, 23);
+            this.dodaj_clana.TabIndex = 29;
+            this.dodaj_clana.Text = "Dodaj";
+            this.dodaj_clana.UseVisualStyleBackColor = true;
+            this.dodaj_clana.Click += new System.EventHandler(this.dodaj_clana_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(270, 239);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 17);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "Zapiski:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(41, 239);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(46, 17);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "Email:";
+            // 
+            // notes_text
+            // 
+            this.notes_text.Location = new System.Drawing.Point(273, 279);
+            this.notes_text.Name = "notes_text";
+            this.notes_text.Size = new System.Drawing.Size(176, 22);
+            this.notes_text.TabIndex = 26;
+            // 
+            // mail_text
+            // 
+            this.mail_text.Location = new System.Drawing.Point(41, 279);
+            this.mail_text.Name = "mail_text";
+            this.mail_text.Size = new System.Drawing.Size(176, 22);
+            this.mail_text.TabIndex = 25;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(270, 145);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(55, 17);
+            this.label14.TabIndex = 24;
+            this.label14.Text = "Naslov:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(38, 145);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(60, 17);
+            this.label15.TabIndex = 23;
+            this.label15.Text = "Telefon:";
+            // 
+            // add_text
+            // 
+            this.add_text.Location = new System.Drawing.Point(273, 185);
+            this.add_text.Name = "add_text";
+            this.add_text.Size = new System.Drawing.Size(176, 22);
+            this.add_text.TabIndex = 22;
+            // 
+            // tel_text
+            // 
+            this.tel_text.Location = new System.Drawing.Point(41, 185);
+            this.tel_text.Name = "tel_text";
+            this.tel_text.Size = new System.Drawing.Size(176, 22);
+            this.tel_text.TabIndex = 21;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(270, 38);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(58, 17);
+            this.label16.TabIndex = 20;
+            this.label16.Text = "Priimek:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(41, 38);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(34, 17);
+            this.label17.TabIndex = 19;
+            this.label17.Text = "Ime:";
+            // 
+            // sur_text
+            // 
+            this.sur_text.Location = new System.Drawing.Point(273, 78);
+            this.sur_text.Name = "sur_text";
+            this.sur_text.Size = new System.Drawing.Size(176, 22);
+            this.sur_text.TabIndex = 18;
+            // 
+            // name_text
+            // 
+            this.name_text.Location = new System.Drawing.Point(41, 78);
+            this.name_text.Name = "name_text";
+            this.name_text.Size = new System.Drawing.Size(176, 22);
+            this.name_text.TabIndex = 17;
             // 
             // KnjigeForm
             // 
@@ -701,6 +848,8 @@ namespace knjiznica_timtom
             this.izposoja_user_tab.PerformLayout();
             this.changedata_user_tab.ResumeLayout(false);
             this.changedata_user_tab.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -767,5 +916,19 @@ namespace knjiznica_timtom
         private System.Windows.Forms.Label Ime;
         private System.Windows.Forms.TextBox priimek_c_text;
         private System.Windows.Forms.TextBox ime_c_text;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Button dodaj_clana;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox notes_text;
+        private System.Windows.Forms.TextBox mail_text;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox add_text;
+        private System.Windows.Forms.TextBox tel_text;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox sur_text;
+        private System.Windows.Forms.TextBox name_text;
     }
 }

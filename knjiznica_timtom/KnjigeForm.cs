@@ -119,24 +119,31 @@ namespace knjiznica_timtom
 
             update_list();
 
-            Clan a = clanilist[clani_combo.SelectedIndex];
+            Clan aa = clanilist[clani_combo.SelectedIndex];
 
-            ime_c_text.Text = a.ime;
-            priimek_c_text.Text = a.priimek;
-            tel_c_text.Text = a.telefon;
-            email_c_text.Text = a.email;
-            naslov_c_text.Text = a.naslov;
-            notes_c_text.Text = a.zapiski;
+            ime_c_text.Text = aa.ime;
+            priimek_c_text.Text = aa.priimek;
+            tel_c_text.Text = aa.telefon;
+            email_c_text.Text = aa.email;
+            naslov_c_text.Text = aa.naslov;
+            notes_c_text.Text = aa.zapiski;
+        }
+
+        public void update_clani()
+        {
+            clani_combo.Items.Clear();
+
+            clanilist = cb.GetAllClani();
+
+            foreach (Clan a in clanilist)
+            {
+                clani_combo.Items.Add(a.ime + " " + a.priimek);
+            }
         }
 
         private void tabPage2_Enter(object sender, EventArgs e)
         {
-            clanilist = cb.GetAllClani();
-
-            foreach(Clan a in clanilist)
-            {
-                clani_combo.Items.Add(a.ime + " " + a.priimek);
-            }
+            update_clani();
         }
 
         private void izposoje_listview_SelectedIndexChanged(object sender, EventArgs e)
@@ -191,6 +198,37 @@ namespace knjiznica_timtom
                 book_list_iz.Items.Add(newList);
 
             }
+        }
+
+        private void spremeni_podatke_Click(object sender, EventArgs e)
+        {
+            int index = clani_combo.SelectedIndex;
+
+            cb.posodobiClana(clan_id, ime_c_text.Text, priimek_c_text.Text, naslov_c_text.Text, tel_c_text.Text, email_c_text.Text, notes_c_text.Text);
+
+            update_clani();
+
+            clani_combo.SelectedIndex = index;
+        }
+
+        private void zbrisi_user_Click(object sender, EventArgs e)
+        {
+            cb.zbrisiclana(clan_id);
+
+            clan_id = 0;
+
+            update_clani();
+
+            clani_combo.SelectedIndex = 0;
+        }
+
+        private void dodaj_clana_Click(object sender, EventArgs e)
+        {
+            cb.dodajClana(name_text.Text, sur_text.Text, add_text.Text, tel_text.Text, mail_text.Text, notes_text.Text);
+
+            MessageBox.Show("Član dodan");
+
+            name_text.Text = ""; sur_text.Text = ""; add_text.Text = ""; tel_text.Text = ""; mail_text.Text = ""; notes_text.Text = "";
         }
     }
 }

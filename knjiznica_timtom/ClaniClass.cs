@@ -113,6 +113,60 @@ namespace knjiznica_timtom
             return stanje;
         }
 
+        public void posodobiClana(int id_clan, string ime, string priimek, string naslov, string tel, string email, string notes)
+        {
+            conn.Open();
+
+
+            using (SQLiteCommand com = new SQLiteCommand(conn))
+            {
+                com.CommandText = "UPDATE users SET name = '"+ ime + "', surname = '" + priimek + "', address = '" + naslov + "', tel = '" + tel + "', email = '" + email + "', notes = '" + notes + "' WHERE id = " + id_clan + ";";
+
+                com.ExecuteNonQuery();
+
+                com.Dispose();
+            }
+
+
+            conn.Close();
+        }
+
+        public void dodajClana(string ime, string priimek, string naslov, string tel, string email, string notes)
+        {
+            conn.Open();
+
+
+            using (SQLiteCommand com = new SQLiteCommand(conn))
+            {
+                com.CommandText = "INSERT INTO users (name, surname, address, tel, email, notes) VALUES('" + ime + "', '" + priimek + "', '" + naslov + "', '" + tel + "', '" + email + "', '" + notes + "');";
+
+                com.ExecuteNonQuery();
+
+                com.Dispose();
+            }
+
+
+            conn.Close();
+        }
+
+        public void zbrisiclana(int id_clan)
+        {
+            conn.Open();
+
+
+            using (SQLiteCommand com = new SQLiteCommand(conn))
+            {
+                com.CommandText = "DELETE FROM users WHERE id = " + id_clan + ";";
+
+                com.ExecuteNonQuery();
+
+                com.Dispose();
+            }
+
+
+            conn.Close();
+        }
+
         public List<Knjiga> GetAllAvaliableBooks()
         {
             List<Knjiga> list = new List<Knjiga>();
