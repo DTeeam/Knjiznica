@@ -65,7 +65,7 @@ namespace knjiznica_timtom
             this.odstranu_iz_seznama = new System.Windows.Forms.Button();
             this.dodaj_na_seznam = new System.Windows.Forms.Button();
             this.izpsosodi = new System.Windows.Forms.Button();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.booklist_zaiz = new System.Windows.Forms.ListView();
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -396,7 +396,7 @@ namespace knjiznica_timtom
             this.izposoja_user_tab.Controls.Add(this.odstranu_iz_seznama);
             this.izposoja_user_tab.Controls.Add(this.dodaj_na_seznam);
             this.izposoja_user_tab.Controls.Add(this.izpsosodi);
-            this.izposoja_user_tab.Controls.Add(this.listView2);
+            this.izposoja_user_tab.Controls.Add(this.booklist_zaiz);
             this.izposoja_user_tab.Controls.Add(this.book_list_iz);
             this.izposoja_user_tab.Location = new System.Drawing.Point(4, 25);
             this.izposoja_user_tab.Name = "izposoja_user_tab";
@@ -463,6 +463,7 @@ namespace knjiznica_timtom
             this.odstranu_iz_seznama.TabIndex = 21;
             this.odstranu_iz_seznama.Text = "Odstrani";
             this.odstranu_iz_seznama.UseVisualStyleBackColor = true;
+            this.odstranu_iz_seznama.Click += new System.EventHandler(this.odstranu_iz_seznama_Click);
             // 
             // dodaj_na_seznam
             // 
@@ -473,6 +474,7 @@ namespace knjiznica_timtom
             this.dodaj_na_seznam.TabIndex = 20;
             this.dodaj_na_seznam.Text = "Dodaj";
             this.dodaj_na_seznam.UseVisualStyleBackColor = true;
+            this.dodaj_na_seznam.Click += new System.EventHandler(this.dodaj_na_seznam_Click);
             // 
             // izpsosodi
             // 
@@ -482,25 +484,27 @@ namespace knjiznica_timtom
             this.izpsosodi.TabIndex = 19;
             this.izpsosodi.Text = "Izposodi";
             this.izpsosodi.UseVisualStyleBackColor = true;
+            this.izpsosodi.Click += new System.EventHandler(this.izpsosodi_Click);
             // 
-            // listView2
+            // booklist_zaiz
             // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.booklist_zaiz.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader8,
             this.columnHeader9,
             this.columnHeader10});
-            this.listView2.FullRowSelect = true;
-            this.listView2.HideSelection = false;
-            this.listView2.LabelEdit = true;
-            this.listView2.Location = new System.Drawing.Point(566, 111);
-            this.listView2.Margin = new System.Windows.Forms.Padding(4);
-            this.listView2.MultiSelect = false;
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(411, 228);
-            this.listView2.TabIndex = 18;
-            this.listView2.TileSize = new System.Drawing.Size(10, 10);
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
+            this.booklist_zaiz.FullRowSelect = true;
+            this.booklist_zaiz.HideSelection = false;
+            this.booklist_zaiz.LabelEdit = true;
+            this.booklist_zaiz.Location = new System.Drawing.Point(566, 111);
+            this.booklist_zaiz.Margin = new System.Windows.Forms.Padding(4);
+            this.booklist_zaiz.MultiSelect = false;
+            this.booklist_zaiz.Name = "booklist_zaiz";
+            this.booklist_zaiz.Size = new System.Drawing.Size(411, 228);
+            this.booklist_zaiz.TabIndex = 18;
+            this.booklist_zaiz.TileSize = new System.Drawing.Size(10, 10);
+            this.booklist_zaiz.UseCompatibleStateImageBehavior = false;
+            this.booklist_zaiz.View = System.Windows.Forms.View.Details;
+            this.booklist_zaiz.SelectedIndexChanged += new System.EventHandler(this.booklist_zaiz_SelectedIndexChanged);
             // 
             // columnHeader8
             // 
@@ -536,6 +540,7 @@ namespace knjiznica_timtom
             this.book_list_iz.TileSize = new System.Drawing.Size(10, 10);
             this.book_list_iz.UseCompatibleStateImageBehavior = false;
             this.book_list_iz.View = System.Windows.Forms.View.Details;
+            this.book_list_iz.SelectedIndexChanged += new System.EventHandler(this.book_list_iz_SelectedIndexChanged);
             // 
             // columnHeader4
             // 
@@ -893,7 +898,7 @@ namespace knjiznica_timtom
         private System.Windows.Forms.Button odstranu_iz_seznama;
         private System.Windows.Forms.Button dodaj_na_seznam;
         private System.Windows.Forms.Button izpsosodi;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView booklist_zaiz;
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;

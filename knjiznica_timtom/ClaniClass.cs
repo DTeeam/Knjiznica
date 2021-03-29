@@ -203,5 +203,26 @@ namespace knjiznica_timtom
 
             return list;
         }
+
+        public void izposodi_knjige(List<int> ids, int clan_id)
+        {
+            conn.Open();
+
+
+            using (SQLiteCommand com = new SQLiteCommand(conn))
+            {
+                foreach(int id in ids)
+                {
+                    com.CommandText = "INSERT INTO rents(user_id, book_id, state, date) VALUES("+ clan_id +", "+ id +", 1, '"+ DateTime.Now.ToString("dd/MM/yyyy") +"');";
+
+                    com.ExecuteNonQuery();
+                }
+                
+                com.Dispose();
+            }
+
+
+            conn.Close();
+        }
     }
 }
