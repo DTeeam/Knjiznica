@@ -57,7 +57,8 @@ namespace knjiznica_timtom
 
                     if (reader.IsDBNull(9))
                         a.zasedena = 0;
-                    else a.zasedena = 1;
+                    else
+                        a.zasedena = reader.GetInt32(9);
 
                     list.Add(a);
                 }

@@ -13,9 +13,17 @@ namespace knjiznica_timtom
     public partial class KnjigeForm : Form
     {
         List<Knjiga> booklist;
+        List<Clan> clanilist;
+        List<Izposoja> izposoje;
+        List<int> iz_id = new List<int>();
+
         Knjiga k = new Knjiga();
         DBClass db = new DBClass();
+        ClaniClass cb = new ClaniClass();
+
         int id = 0;
+        int clan_id = 0;
+
         public KnjigeForm()
         {
             InitializeComponent();
@@ -79,6 +87,227 @@ namespace knjiznica_timtom
                 book_listView.Items.Add(newList);
 
             }
+        }
+
+        private void update_list()
+        {
+            clan_id = clanilist[clani_combo.SelectedIndex].id;
+
+            izposoje = cb.GetAllIzposojaForUser(clan_id);
+
+            izposoje_listview.Items.Clear();
+            foreach (Izposoja a in izposoje)
+            {
+                ListViewItem newList = new ListViewItem(a.id_knjige.ToString());
+                newList.UseItemStyleForSubItems = false;
+
+                newList.SubItems.Add("");
+                newList.SubItems.Add(a.datum_izposoje);
+
+                if (a.stanje == 1)
+                    newList.SubItems[1].BackColor = Color.Red;
+                else
+                    newList.SubItems[1].BackColor = Color.Green;
+
+                izposoje_listview.Items.Add(newList);
+
+            }
+
+            book_list_iz.Items.Clear();
+            booklist = cb.GetAllAvaliableBooks();
+
+            foreach (Knjiga a in booklist)
+            {
+                ListViewItem newList = new ListViewItem(a.inventarna_stevilka.ToString());
+                newList.UseItemStyleForSubItems = false;
+
+                newList.SubItems.Add(a.naslov);
+                newList.SubItems.Add(a.avtor);
+                newList.SubItems.Add("");
+
+                if (a.zasedena == 1)
+                    newList.SubItems[3].BackColor = Color.Red;
+                else
+                    newList.SubItems[3].BackColor = Color.Green;
+
+                book_list_iz.Items.Add(newList);
+
+            }
+        }
+
+        private void clani_combo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tabControl2.Enabled = true;
+
+            update_list();
+
+            Clan aa = clanilist[clani_combo.SelectedIndex];
+
+            ime_c_text.Text = aa.ime;
+            priimek_c_text.Text = aa.priimek;
+            tel_c_text.Text = aa.telefon;
+            email_c_text.Text = aa.email;
+            naslov_c_text.Text = aa.naslov;
+            notes_c_text.Text = aa.zapiski;
+        }
+
+        public void update_clani()
+        {
+            clani_combo.Items.Clear();
+
+            clanilist = cb.GetAllClani();
+
+            foreach (Clan a in clanilist)
+            {
+                clani_combo.Items.Add(a.ime + " " + a.priimek);
+            }
+        }
+
+        private void tabPage2_Enter(object sender, EventArgs e)
+        {
+            update_clani();
+        }
+
+        private void izposoje_listview_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int index = izposoje_listview.SelectedItems[0].Index;
+                int stanje = izposoje[index].stanje;
+
+                if (stanje == 1)
+                {
+                    return_butt.Enabled = true;
+                }
+            }
+            catch (Exception)
+            {
+                return_butt.Enabled = false;
+                izposoje_listview.SelectedItems.Clear();
+            }
+        }
+
+        private void return_butt_Click(object sender, EventArgs e)
+        {
+            return_butt.Enabled = false;
+
+            int id_izposoje = izposoje[izposoje_listview.SelectedItems[0].Index].id;
+
+            int stanje = cb.vrni(id_izposoje);
+
+            if(stanje == 0)
+            {
+                MessageBox.Show("Vrnjeno");
+            }
+            else
+            {
+                MessageBox.Show("Napaka");
+            }
+
+            update_list();
+        }
+
+        private void izposoja_user_tab_Enter(object sender, EventArgs e)
+        {
+            update_list();
+        }
+
+        private void spremeni_podatke_Click(object sender, EventArgs e)
+        {
+            int index = clani_combo.SelectedIndex;
+
+            cb.posodobiClana(clan_id, ime_c_text.Text, priimek_c_text.Text, naslov_c_text.Text, tel_c_text.Text, email_c_text.Text, notes_c_text.Text);
+
+            update_clani();
+
+            clani_combo.SelectedIndex = index;
+        }
+
+        private void zbrisi_user_Click(object sender, EventArgs e)
+        {
+            cb.zbrisiclana(clan_id);
+
+            clan_id = 0;
+
+            update_clani();
+
+            clani_combo.SelectedIndex = 0;
+        }
+
+        private void dodaj_clana_Click(object sender, EventArgs e)
+        {
+            cb.dodajClana(name_text.Text, sur_text.Text, add_text.Text, tel_text.Text, mail_text.Text, notes_text.Text);
+
+            MessageBox.Show("Član dodan");
+
+            name_text.Text = ""; sur_text.Text = ""; add_text.Text = ""; tel_text.Text = ""; mail_text.Text = ""; notes_text.Text = "";
+        }
+
+        private void book_list_iz_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dodaj_na_seznam.Enabled = true;
+        }
+
+        private void dodaj_na_seznam_Click(object sender, EventArgs e)
+        {
+            Knjiga a = booklist[book_list_iz.SelectedItems[0].Index];
+
+            if(iz_id.Contains(a.inventarna_stevilka))
+            {
+                MessageBox.Show("Knjiga je že dodana");
+            }
+            else
+            {
+                ListViewItem newList = new ListViewItem(a.inventarna_stevilka.ToString());
+                newList.UseItemStyleForSubItems = false;
+
+                newList.SubItems.Add(a.naslov);
+                newList.SubItems.Add(a.avtor);
+                newList.SubItems.Add("");
+
+                if (a.zasedena == 1)
+                    newList.SubItems[3].BackColor = Color.Red;
+                else
+                    newList.SubItems[3].BackColor = Color.Green;
+
+                booklist_zaiz.Items.Add(newList);
+
+                iz_id.Add(a.inventarna_stevilka);
+            }
+
+            dodaj_na_seznam.Enabled = false;
+        }
+
+        private void booklist_zaiz_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            odstranu_iz_seznama.Enabled = true;
+        }
+
+        private void odstranu_iz_seznama_Click(object sender, EventArgs e)
+        {
+            Knjiga a = booklist[booklist_zaiz.SelectedItems[0].Index];
+
+            iz_id.Remove(a.inventarna_stevilka);
+
+            booklist_zaiz.SelectedItems[0].Remove();
+
+            odstranu_iz_seznama.Enabled = false;
+        }
+
+        private void izpsosodi_Click(object sender, EventArgs e)
+        {
+            cb.izposodi_knjige(iz_id, clan_id);
+
+            iz_id.Clear();
+
+            update_list();
+
+            booklist_zaiz.Clear();
+
+            dodaj_na_seznam.Enabled = false;
+            odstranu_iz_seznama.Enabled = false;
+
+            MessageBox.Show("Knjige so izposojene");
         }
     }
 }
