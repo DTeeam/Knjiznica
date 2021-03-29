@@ -18,6 +18,16 @@ namespace knjiznica_timtom
         public int izgubljena { get; set; }
         public int section_id { get; set; }
         public int zasedena { get; set; }
+
+        public Knjiga()
+        {
+
+        }
+
+        public Knjiga(int id)
+        {
+            inventarna_stevilka = id;
+        }
     }
     
     public class Clan
@@ -29,6 +39,16 @@ namespace knjiznica_timtom
         public string naslov { get; set; }
         public string email { get; set; }
         public string zapiski { get; set; }
+
+    }
+
+    public class Izposoja
+    {
+        public int id { get; set; }
+        public int id_clana { get; set; }
+        public int id_knjige { get; set; }
+        public int stanje { get; set; }
+        public string datum_izposoje { get; set; }
 
     }
 }

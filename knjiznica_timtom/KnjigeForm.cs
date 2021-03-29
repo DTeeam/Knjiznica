@@ -14,6 +14,7 @@ namespace knjiznica_timtom
     {
         List<Knjiga> booklist;
         List<Clan> clanilist;
+        List<Izposoja> izposoje;
 
         Knjiga k = new Knjiga();
         DBClass db = new DBClass();
@@ -93,7 +94,25 @@ namespace knjiznica_timtom
 
             clan_id = clanilist[clani_combo.SelectedIndex].id;
 
+            izposoje = cb.GetAllIzposojaForUser(clan_id);
 
+            izposoje_listview.Items.Clear();
+            foreach (Izposoja a in izposoje)
+            {
+                ListViewItem newList = new ListViewItem(a.id_knjige.ToString());
+                newList.UseItemStyleForSubItems = false;
+
+                newList.SubItems.Add("");
+                newList.SubItems.Add(a.datum_izposoje);
+
+                if (a.stanje == 1)
+                    newList.SubItems[1].BackColor = Color.Red;
+                else
+                    newList.SubItems[1].BackColor = Color.Green;
+
+                izposoje_listview.Items.Add(newList);
+
+            }
         }
 
         private void tabPage2_Enter(object sender, EventArgs e)
@@ -104,6 +123,16 @@ namespace knjiznica_timtom
             {
                 clani_combo.Items.Add(a.ime + " " + a.priimek);
             }
+        }
+
+        private void izposoje_listview_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            return_butt.Enabled = true;
+        }
+
+        private void return_butt_Click(object sender, EventArgs e)
+        {
+            return_butt.Enabled = false;
         }
     }
 }

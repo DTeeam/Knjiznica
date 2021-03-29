@@ -45,5 +45,38 @@ namespace knjiznica_timtom
 
             return list;
         }
+
+        public List<Izposoja> GetAllIzposojaForUser(int clan_id)
+        {
+            List<Izposoja> list = new List<Izposoja>();
+
+            conn.Open();
+
+            using (SQLiteCommand com = new SQLiteCommand(conn))
+            {
+                com.CommandText = "SELECT * FROM rents WHERE user_id = "+ clan_id +";";
+
+                SQLiteDataReader reader = com.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Izposoja a = new Izposoja();
+
+                    a.id = reader.GetInt32(0);
+                    a.id_clana = reader.GetInt32(1);
+                    a.id_knjige = reader.GetInt32(2);
+                    a.stanje = reader.GetInt32(3);
+                    a.datum_izposoje = reader.GetString(4);
+
+                    list.Add(a);
+                }
+
+                com.Dispose();
+            }
+
+            conn.Close();
+
+            return list;
+        }
     }
 }
