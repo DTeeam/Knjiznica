@@ -91,8 +91,6 @@ namespace knjiznica_timtom
 
         private void update_list()
         {
-            clan_id = clanilist[clani_combo.SelectedIndex].id;
-
             izposoje = cb.GetAllIzposojaForUser(clan_id);
 
             izposoje_listview.Items.Clear();
@@ -138,6 +136,9 @@ namespace knjiznica_timtom
         private void clani_combo_SelectedIndexChanged(object sender, EventArgs e)
         {
             tabControl2.Enabled = true;
+
+            clan_id = clanilist[clani_combo.SelectedIndex].id;
+
 
             update_list();
 
@@ -190,20 +191,27 @@ namespace knjiznica_timtom
         private void return_butt_Click(object sender, EventArgs e)
         {
             return_butt.Enabled = false;
-
-            int id_izposoje = izposoje[izposoje_listview.SelectedItems[0].Index].id;
-
-            int stanje = cb.vrni(id_izposoje);
-
-            if(stanje == 0)
+            try
             {
-                MessageBox.Show("Vrnjeno");
-            }
-            else
-            {
-                MessageBox.Show("Napaka");
-            }
+                int index = izposoje_listview.SelectedItems[0].Index;
 
+                int id_izposoje = izposoje[index].id;
+
+                int stanje = cb.vrni(id_izposoje);
+
+                if (stanje == 0)
+                {
+                    MessageBox.Show("Vrnjeno");
+                }
+                else
+                {
+                    MessageBox.Show("Napaka");
+                }
+            }
+            catch (Exception)
+            {
+                izposoje_listview.SelectedItems.Clear();
+            }
             update_list();
         }
 
