@@ -72,8 +72,6 @@ namespace knjiznica_timtom
 
         public void deleteBook(Knjiga k)
         {
-
-
             conn.Open();
 
             using (SQLiteCommand com = new SQLiteCommand(conn))
@@ -84,7 +82,34 @@ namespace knjiznica_timtom
             }
 
             conn.Close();
+        }
+        public List<Knjiga> GetSections()
+        {
+            List<Knjiga> list = new List<Knjiga>();
 
+            conn.Open();
+
+            using (SQLiteCommand com = new SQLiteCommand(conn))
+            {
+                com.CommandText = "SELECT * FROM sections;";
+
+                SQLiteDataReader reader = com.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Knjiga k = new Knjiga();
+
+                    k.sekcija_id = reader.GetInt32(0);
+                    k.sekcija = reader.GetString(1);
+
+                    list.Add(k);
+                }
+                com.Dispose();
+            }
+
+            conn.Close();
+
+            return list;
         }
     }
 }

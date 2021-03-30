@@ -65,7 +65,7 @@ namespace knjiznica_timtom
             foreach (Knjiga a in booklist)
             {
                 ListViewItem newList = new ListViewItem(a.inventarna_stevilka.ToString());
-                newList.UseItemStyleForSubItems = false;
+                //newList.UseItemStyleForSubItems = false;
 
                 newList.SubItems.Add(a.naslov);
                 newList.SubItems.Add(a.avtor);
@@ -80,5 +80,7 @@ namespace knjiznica_timtom
 
             }
         }
+
+        
     }
 }

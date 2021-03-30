@@ -46,13 +46,32 @@ namespace knjiznica_timtom
             this.section_combo = new System.Windows.Forms.ComboBox();
             this.search_text = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.yearBox = new System.Windows.Forms.NumericUpDown();
+            this.notesBox = new System.Windows.Forms.RichTextBox();
+            this.shopBox = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.publisherBox = new System.Windows.Forms.TextBox();
+            this.authorBox = new System.Windows.Forms.TextBox();
+            this.titleBox = new System.Windows.Forms.TextBox();
+            this.sectionCombo = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.yearBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shopBox)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
@@ -208,8 +227,145 @@ namespace knjiznica_timtom
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(768, 400);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Uporabniki";
+            this.tabPage2.Text = "Člani";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.yearBox);
+            this.tabPage3.Controls.Add(this.notesBox);
+            this.tabPage3.Controls.Add(this.shopBox);
+            this.tabPage3.Controls.Add(this.label7);
+            this.tabPage3.Controls.Add(this.label6);
+            this.tabPage3.Controls.Add(this.label5);
+            this.tabPage3.Controls.Add(this.label4);
+            this.tabPage3.Controls.Add(this.label3);
+            this.tabPage3.Controls.Add(this.label8);
+            this.tabPage3.Controls.Add(this.label9);
+            this.tabPage3.Controls.Add(this.publisherBox);
+            this.tabPage3.Controls.Add(this.authorBox);
+            this.tabPage3.Controls.Add(this.titleBox);
+            this.tabPage3.Controls.Add(this.sectionCombo);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(768, 400);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Dodaj";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // yearBox
+            // 
+            this.yearBox.Location = new System.Drawing.Point(86, 117);
+            this.yearBox.Name = "yearBox";
+            this.yearBox.Size = new System.Drawing.Size(120, 20);
+            this.yearBox.TabIndex = 30;
+            // 
+            // notesBox
+            // 
+            this.notesBox.Location = new System.Drawing.Point(83, 145);
+            this.notesBox.Name = "notesBox";
+            this.notesBox.Size = new System.Drawing.Size(121, 77);
+            this.notesBox.TabIndex = 29;
+            this.notesBox.Text = "";
+            // 
+            // shopBox
+            // 
+            this.shopBox.Location = new System.Drawing.Point(86, 91);
+            this.shopBox.Name = "shopBox";
+            this.shopBox.Size = new System.Drawing.Size(120, 20);
+            this.shopBox.TabIndex = 28;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(8, 252);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(45, 13);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Sekcija:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(8, 145);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 13);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Zapiski:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(8, 119);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 13);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "Leto izida:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(8, 93);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 13);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Pridobitev:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(8, 67);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 13);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "Založba:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(8, 41);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Avtor:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(8, 15);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(43, 13);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "Naslov:";
+            // 
+            // publisherBox
+            // 
+            this.publisherBox.Location = new System.Drawing.Point(86, 64);
+            this.publisherBox.Name = "publisherBox";
+            this.publisherBox.Size = new System.Drawing.Size(118, 20);
+            this.publisherBox.TabIndex = 20;
+            // 
+            // authorBox
+            // 
+            this.authorBox.Location = new System.Drawing.Point(86, 38);
+            this.authorBox.Name = "authorBox";
+            this.authorBox.Size = new System.Drawing.Size(118, 20);
+            this.authorBox.TabIndex = 19;
+            // 
+            // titleBox
+            // 
+            this.titleBox.Location = new System.Drawing.Point(86, 12);
+            this.titleBox.Name = "titleBox";
+            this.titleBox.Size = new System.Drawing.Size(118, 20);
+            this.titleBox.TabIndex = 18;
+            // 
+            // sectionCombo
+            // 
+            this.sectionCombo.FormattingEnabled = true;
+            this.sectionCombo.Location = new System.Drawing.Point(83, 249);
+            this.sectionCombo.Name = "sectionCombo";
+            this.sectionCombo.Size = new System.Drawing.Size(121, 21);
+            this.sectionCombo.TabIndex = 17;
             // 
             // KnjigeForm
             // 
@@ -222,6 +378,10 @@ namespace knjiznica_timtom
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.yearBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shopBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -245,5 +405,20 @@ namespace knjiznica_timtom
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.NumericUpDown yearBox;
+        private System.Windows.Forms.RichTextBox notesBox;
+        private System.Windows.Forms.NumericUpDown shopBox;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox publisherBox;
+        private System.Windows.Forms.TextBox authorBox;
+        private System.Windows.Forms.TextBox titleBox;
+        private System.Windows.Forms.ComboBox sectionCombo;
     }
 }
