@@ -42,7 +42,7 @@ namespace knjiznica_timtom
 
             using (SQLiteCommand com = new SQLiteCommand(conn))
             {
-                com.CommandText = "SELECT b.*, r1.state FROM books b  LEFT OUTER JOIN rents r1 ON b.id = r1.book_id LEFT JOIN rents r2 ON (b.id = r2.book_id AND r1.date < r2.date OR(r1.date = r2.date AND r1.id < r2.id)) WHERE r2.id IS NULL;";
+                com.CommandText = "SELECT b.*, r1.state FROM books b LEFT OUTER JOIN (SELECT book_id, MAX(id) AS latest FROM rents GROUP BY book_id) AS rent ON rent.book_id = b.id LEFT OUTER JOIN rents r1 ON rent.book_id = r1.book_id AND r1.id = rent.latest GROUP BY b.id";
 
                 SQLiteDataReader reader = com.ExecuteReader();
 

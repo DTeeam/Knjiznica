@@ -24,6 +24,8 @@ namespace knjiznica_timtom
         int id = 0;
         int clan_id = 0;
 
+        bool spremembe = false;
+
         public KnjigeForm()
         {
             InitializeComponent();
@@ -31,10 +33,9 @@ namespace knjiznica_timtom
 
         private void tabPage1_Enter(object sender, EventArgs e)
         {
-            fillListView();
+            if (spremembe)
+                fillListView();
         }
-
-
 
         private void change_button_Click(object sender, EventArgs e)
         {
@@ -50,7 +51,6 @@ namespace knjiznica_timtom
 
         private void book_listView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
             string item = string.Empty;
 
             for (int i = 0; i < book_listView.SelectedItems.Count; i++)
@@ -67,6 +67,8 @@ namespace knjiznica_timtom
 
         private void fillListView()
         {
+            spremembe = false;
+
             book_listView.Items.Clear();
             booklist = db.GetAllBooks();
 
@@ -129,8 +131,9 @@ namespace knjiznica_timtom
                     newList.SubItems[3].BackColor = Color.Green;
 
                 book_list_iz.Items.Add(newList);
-
             }
+
+            spremembe = true;
         }
 
         private void clani_combo_SelectedIndexChanged(object sender, EventArgs e)
@@ -310,7 +313,7 @@ namespace knjiznica_timtom
 
             update_list();
 
-            booklist_zaiz.Clear();
+            booklist_zaiz.Items.Clear();
 
             dodaj_na_seznam.Enabled = false;
             odstranu_iz_seznama.Enabled = false;
@@ -331,6 +334,11 @@ namespace knjiznica_timtom
             }
             c = c / 100;
             MessageBox.Show("Tu mas svoj cent cipa " + c.ToString());
+        }
+
+        private void KnjigeForm_Load(object sender, EventArgs e)
+        {
+            fillListView();
         }
     }
 }
