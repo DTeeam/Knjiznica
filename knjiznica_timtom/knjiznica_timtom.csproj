@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="ClaniClass.cs" />
     <Compile Include="Classes.cs" />
+    <Compile Include="database_addEdit_books_class.cs" />
     <Compile Include="DBClass.cs" />
     <Compile Include="DodajKnjigo.cs">
       <SubType>Form</SubType>

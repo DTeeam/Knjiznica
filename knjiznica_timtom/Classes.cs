@@ -18,6 +18,7 @@ namespace knjiznica_timtom
         public int izgubljena { get; set; }
         public int section_id { get; set; }
         public int zasedena { get; set; }
+        public string udk { get; set; }
 
         public Knjiga()
         {

@@ -23,7 +23,7 @@ namespace knjiznica_timtom
 
         int id = 0;
         int clan_id = 0;
-
+        int timy = 0;
         public KnjigeForm()
         {
             InitializeComponent();
@@ -38,7 +38,8 @@ namespace knjiznica_timtom
 
         private void change_button_Click(object sender, EventArgs e)
         {
-            book_listView.LabelEdit = true;
+            if (book_listView.SelectedItems.Count == 0)
+                MessageBox.Show("Prosim izberite knjigo za urejanje.");
         }
 
         private void delete_button_Click(object sender, EventArgs e)
@@ -50,7 +51,7 @@ namespace knjiznica_timtom
 
         private void book_listView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            timy = 1;
             string item = string.Empty;
 
             for (int i = 0; i < book_listView.SelectedItems.Count; i++)
@@ -331,6 +332,14 @@ namespace knjiznica_timtom
             }
             c = c / 100;
             MessageBox.Show("Tu mas svoj cent cipa " + c.ToString());
+        }
+
+        private void insert_button_Click(object sender, EventArgs e)
+        {
+            //this.Hide();
+            var dodaj = new DodajKnjigo();
+            //dodaj.FormClosed += (s, args) => this.Close();
+            dodaj.Show();
         }
     }
 }
