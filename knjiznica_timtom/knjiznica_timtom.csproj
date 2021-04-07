@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClaniClass.cs" />
+    <Compile Include="IskanjeClass.cs" />
     <Compile Include="Classes.cs" />
     <Compile Include="DBClass.cs" />
     <Compile Include="DodajKnjigo.cs">

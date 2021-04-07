@@ -16,10 +16,12 @@ namespace knjiznica_timtom
         List<Clan> clanilist;
         List<Izposoja> izposoje;
         List<int> iz_id = new List<int>();
+        List<Sekcija> sekcije = new List<Sekcija>();
 
         Knjiga k = new Knjiga();
         DBClass db = new DBClass();
         ClaniClass cb = new ClaniClass();
+        IskanjeClass search = new IskanjeClass();
 
         int id = 0;
         int clan_id = 0;
@@ -33,6 +35,8 @@ namespace knjiznica_timtom
 
         private void tabPage1_Enter(object sender, EventArgs e)
         {
+            section_combo.SelectedIndex = 0;
+
             if (spremembe)
                 fillListView();
         }
@@ -46,7 +50,6 @@ namespace knjiznica_timtom
         {
             db.deleteBook(k);
             fillListView();
-
         }
 
         private void book_listView_SelectedIndexChanged(object sender, EventArgs e)
@@ -68,9 +71,12 @@ namespace knjiznica_timtom
         private void fillListView()
         {
             spremembe = false;
+            section_combo.Items.Clear();
+            section_combo.Items.Add("--Izberite--");
 
             book_listView.Items.Clear();
             booklist = db.GetAllBooks();
+            sekcije = db.returnsekcije();
 
             foreach (Knjiga a in booklist)
             {
@@ -87,7 +93,11 @@ namespace knjiznica_timtom
                     newList.SubItems[3].BackColor = Color.Green;
 
                 book_listView.Items.Add(newList);
+            }
 
+            foreach(Sekcija a in sekcije)
+            {
+                section_combo.Items.Add(a.ime);
             }
         }
 
@@ -221,6 +231,16 @@ namespace knjiznica_timtom
         private void izposoja_user_tab_Enter(object sender, EventArgs e)
         {
             update_list();
+
+            section_clani_combo.Items.Clear();
+            section_clani_combo.Items.Add("--Izberite--");
+
+            sekcije = db.returnsekcije();
+
+            foreach (Sekcija a in sekcije)
+            {
+                section_clani_combo.Items.Add(a.ime);
+            }
         }
 
         private void spremeni_podatke_Click(object sender, EventArgs e)
@@ -339,6 +359,92 @@ namespace knjiznica_timtom
         private void KnjigeForm_Load(object sender, EventArgs e)
         {
             fillListView();
+        }
+
+        private void searching(string searchstring, int id)
+        {
+            book_listView.Items.Clear();
+            spremembe = false;
+
+            if (id == 0)
+            {
+                booklist = search.GetAllBooksSearch(searchstring);
+            }
+
+            else
+            {
+                booklist = search.GetAllBooksSearchWithSection(searchstring, id);
+            }
+
+            foreach (Knjiga a in booklist)
+            {
+                ListViewItem newList = new ListViewItem(a.inventarna_stevilka.ToString());
+                newList.UseItemStyleForSubItems = false;
+
+                newList.SubItems.Add(a.naslov);
+                newList.SubItems.Add(a.avtor);
+                newList.SubItems.Add("");
+
+                if (a.zasedena == 1)
+                    newList.SubItems[3].BackColor = Color.Red;
+                else
+                    newList.SubItems[3].BackColor = Color.Green;
+
+                book_listView.Items.Add(newList);
+
+            }
+        }
+
+        private void search_button_Click(object sender, EventArgs e)
+        {
+            string searchstring = search_text.Text;
+            int id;
+
+            if (section_combo.SelectedIndex == 0 || section_combo.SelectedIndex == -1)
+            {
+                id = 0;
+            }
+            else
+            {
+                id = sekcije[section_combo.SelectedIndex].id;
+            }
+
+            searching(searchstring, id);
+        }
+
+        private void search_clani_button_Click(object sender, EventArgs e)
+        {
+            string searchstring = search_clani_text.Text;
+            int id;
+
+            if (section_clani_combo.SelectedIndex == 0 || section_clani_combo.SelectedIndex == -1)
+            {
+                booklist = search.GetAllAvaliableBooksSearch(searchstring);
+            }
+            else
+            {
+                id = sekcije[section_clani_combo.SelectedIndex].id;
+                booklist = search.GetAllAvaliableBooksSearchWithSection(searchstring, id);
+            }
+
+            book_list_iz.Items.Clear();
+
+            foreach (Knjiga a in booklist)
+            {
+                ListViewItem newList = new ListViewItem(a.inventarna_stevilka.ToString());
+                newList.UseItemStyleForSubItems = false;
+
+                newList.SubItems.Add(a.naslov);
+                newList.SubItems.Add(a.avtor);
+                newList.SubItems.Add("");
+
+                if (a.zasedena == 1)
+                    newList.SubItems[3].BackColor = Color.Red;
+                else
+                    newList.SubItems[3].BackColor = Color.Green;
+
+                book_list_iz.Items.Add(newList);
+            }
         }
     }
 }
