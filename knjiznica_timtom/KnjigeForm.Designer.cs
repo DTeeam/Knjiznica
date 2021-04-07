@@ -42,7 +42,7 @@ namespace knjiznica_timtom
             this.change_button = new System.Windows.Forms.Button();
             this.delete_button = new System.Windows.Forms.Button();
             this.insert_button = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.search_button = new System.Windows.Forms.Button();
             this.section_combo = new System.Windows.Forms.ComboBox();
             this.search_text = new System.Windows.Forms.TextBox();
             this.clani = new System.Windows.Forms.TabPage();
@@ -59,9 +59,9 @@ namespace knjiznica_timtom
             this.izposoja_user_tab = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.search_clani_button = new System.Windows.Forms.Button();
+            this.section_clani_combo = new System.Windows.Forms.ComboBox();
+            this.search_clani_text = new System.Windows.Forms.TextBox();
             this.odstranu_iz_seznama = new System.Windows.Forms.Button();
             this.dodaj_na_seznam = new System.Windows.Forms.Button();
             this.izpsosodi = new System.Windows.Forms.Button();
@@ -119,7 +119,7 @@ namespace knjiznica_timtom
             this.tabControl1.Controls.Add(this.clani);
             this.tabControl1.Controls.Add(this.dodajclana);
             this.tabControl1.Location = new System.Drawing.Point(19, 17);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1035, 524);
@@ -134,13 +134,13 @@ namespace knjiznica_timtom
             this.knjige.Controls.Add(this.change_button);
             this.knjige.Controls.Add(this.delete_button);
             this.knjige.Controls.Add(this.insert_button);
-            this.knjige.Controls.Add(this.button1);
+            this.knjige.Controls.Add(this.search_button);
             this.knjige.Controls.Add(this.section_combo);
             this.knjige.Controls.Add(this.search_text);
             this.knjige.Location = new System.Drawing.Point(4, 25);
-            this.knjige.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.knjige.Margin = new System.Windows.Forms.Padding(4);
             this.knjige.Name = "knjige";
-            this.knjige.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.knjige.Padding = new System.Windows.Forms.Padding(4);
             this.knjige.Size = new System.Drawing.Size(1027, 495);
             this.knjige.TabIndex = 0;
             this.knjige.Text = "Knjige";
@@ -150,7 +150,7 @@ namespace knjiznica_timtom
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(596, 438);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(141, 28);
             this.button2.TabIndex = 11;
@@ -169,7 +169,7 @@ namespace knjiznica_timtom
             this.book_listView.HideSelection = false;
             this.book_listView.LabelEdit = true;
             this.book_listView.Location = new System.Drawing.Point(32, 160);
-            this.book_listView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.book_listView.Margin = new System.Windows.Forms.Padding(4);
             this.book_listView.MultiSelect = false;
             this.book_listView.Name = "book_listView";
             this.book_listView.Size = new System.Drawing.Size(555, 306);
@@ -222,7 +222,7 @@ namespace knjiznica_timtom
             // change_button
             // 
             this.change_button.Location = new System.Drawing.Point(596, 399);
-            this.change_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.change_button.Margin = new System.Windows.Forms.Padding(4);
             this.change_button.Name = "change_button";
             this.change_button.Size = new System.Drawing.Size(141, 28);
             this.change_button.TabIndex = 6;
@@ -233,7 +233,7 @@ namespace knjiznica_timtom
             // delete_button
             // 
             this.delete_button.Location = new System.Drawing.Point(881, 453);
-            this.delete_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.delete_button.Margin = new System.Windows.Forms.Padding(4);
             this.delete_button.Name = "delete_button";
             this.delete_button.Size = new System.Drawing.Size(100, 28);
             this.delete_button.TabIndex = 5;
@@ -244,28 +244,33 @@ namespace knjiznica_timtom
             // insert_button
             // 
             this.insert_button.Location = new System.Drawing.Point(860, 160);
-            this.insert_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.insert_button.Margin = new System.Windows.Forms.Padding(4);
             this.insert_button.Name = "insert_button";
             this.insert_button.Size = new System.Drawing.Size(141, 28);
             this.insert_button.TabIndex = 4;
             this.insert_button.Text = "Vnesi knjigo";
             this.insert_button.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // search_button
             // 
-            this.button1.Location = new System.Drawing.Point(629, 22);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Išči";
-            this.button1.UseVisualStyleBackColor = true;
+            this.search_button.Location = new System.Drawing.Point(629, 22);
+            this.search_button.Margin = new System.Windows.Forms.Padding(4);
+            this.search_button.Name = "search_button";
+            this.search_button.Size = new System.Drawing.Size(100, 28);
+            this.search_button.TabIndex = 3;
+            this.search_button.Text = "Išči";
+            this.search_button.UseVisualStyleBackColor = true;
+            this.search_button.Click += new System.EventHandler(this.search_button_Click);
             // 
             // section_combo
             // 
+            this.section_combo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.section_combo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.section_combo.FormattingEnabled = true;
+            this.section_combo.Items.AddRange(new object[] {
+            "--Izberite--"});
             this.section_combo.Location = new System.Drawing.Point(32, 89);
-            this.section_combo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.section_combo.Margin = new System.Windows.Forms.Padding(4);
             this.section_combo.Name = "section_combo";
             this.section_combo.Size = new System.Drawing.Size(160, 24);
             this.section_combo.TabIndex = 2;
@@ -273,7 +278,7 @@ namespace knjiznica_timtom
             // search_text
             // 
             this.search_text.Location = new System.Drawing.Point(32, 26);
-            this.search_text.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.search_text.Margin = new System.Windows.Forms.Padding(4);
             this.search_text.Name = "search_text";
             this.search_text.Size = new System.Drawing.Size(520, 22);
             this.search_text.TabIndex = 1;
@@ -284,9 +289,9 @@ namespace knjiznica_timtom
             this.clani.Controls.Add(this.clani_combo);
             this.clani.Controls.Add(this.tabControl2);
             this.clani.Location = new System.Drawing.Point(4, 25);
-            this.clani.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.clani.Margin = new System.Windows.Forms.Padding(4);
             this.clani.Name = "clani";
-            this.clani.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.clani.Padding = new System.Windows.Forms.Padding(4);
             this.clani.Size = new System.Drawing.Size(1027, 495);
             this.clani.TabIndex = 1;
             this.clani.Text = "Člani";
@@ -398,9 +403,9 @@ namespace knjiznica_timtom
             // 
             this.izposoja_user_tab.Controls.Add(this.label5);
             this.izposoja_user_tab.Controls.Add(this.label6);
-            this.izposoja_user_tab.Controls.Add(this.button3);
-            this.izposoja_user_tab.Controls.Add(this.comboBox1);
-            this.izposoja_user_tab.Controls.Add(this.textBox1);
+            this.izposoja_user_tab.Controls.Add(this.search_clani_button);
+            this.izposoja_user_tab.Controls.Add(this.section_clani_combo);
+            this.izposoja_user_tab.Controls.Add(this.search_clani_text);
             this.izposoja_user_tab.Controls.Add(this.odstranu_iz_seznama);
             this.izposoja_user_tab.Controls.Add(this.dodaj_na_seznam);
             this.izposoja_user_tab.Controls.Add(this.izpsosodi);
@@ -436,32 +441,33 @@ namespace knjiznica_timtom
             this.label6.TabIndex = 25;
             this.label6.Text = "Kategorije:";
             // 
-            // button3
+            // search_clani_button
             // 
-            this.button3.Location = new System.Drawing.Point(283, 31);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(60, 28);
-            this.button3.TabIndex = 24;
-            this.button3.Text = "Išči";
-            this.button3.UseVisualStyleBackColor = true;
+            this.search_clani_button.Location = new System.Drawing.Point(283, 31);
+            this.search_clani_button.Margin = new System.Windows.Forms.Padding(4);
+            this.search_clani_button.Name = "search_clani_button";
+            this.search_clani_button.Size = new System.Drawing.Size(60, 28);
+            this.search_clani_button.TabIndex = 24;
+            this.search_clani_button.Text = "Išči";
+            this.search_clani_button.UseVisualStyleBackColor = true;
+            this.search_clani_button.Click += new System.EventHandler(this.search_clani_button_Click);
             // 
-            // comboBox1
+            // section_clani_combo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(109, 71);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 23;
+            this.section_clani_combo.FormattingEnabled = true;
+            this.section_clani_combo.Location = new System.Drawing.Point(109, 71);
+            this.section_clani_combo.Margin = new System.Windows.Forms.Padding(4);
+            this.section_clani_combo.Name = "section_clani_combo";
+            this.section_clani_combo.Size = new System.Drawing.Size(121, 24);
+            this.section_clani_combo.TabIndex = 23;
             // 
-            // textBox1
+            // search_clani_text
             // 
-            this.textBox1.Location = new System.Drawing.Point(29, 31);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(215, 22);
-            this.textBox1.TabIndex = 22;
+            this.search_clani_text.Location = new System.Drawing.Point(29, 31);
+            this.search_clani_text.Margin = new System.Windows.Forms.Padding(4);
+            this.search_clani_text.Name = "search_clani_text";
+            this.search_clani_text.Size = new System.Drawing.Size(215, 22);
+            this.search_clani_text.TabIndex = 22;
             // 
             // odstranu_iz_seznama
             // 
@@ -508,7 +514,7 @@ namespace knjiznica_timtom
             this.booklist_zaiz.HideSelection = false;
             this.booklist_zaiz.LabelEdit = true;
             this.booklist_zaiz.Location = new System.Drawing.Point(565, 111);
-            this.booklist_zaiz.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.booklist_zaiz.Margin = new System.Windows.Forms.Padding(4);
             this.booklist_zaiz.MultiSelect = false;
             this.booklist_zaiz.Name = "booklist_zaiz";
             this.booklist_zaiz.Size = new System.Drawing.Size(411, 228);
@@ -544,7 +550,7 @@ namespace knjiznica_timtom
             this.book_list_iz.HideSelection = false;
             this.book_list_iz.LabelEdit = true;
             this.book_list_iz.Location = new System.Drawing.Point(28, 111);
-            this.book_list_iz.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.book_list_iz.Margin = new System.Windows.Forms.Padding(4);
             this.book_list_iz.MultiSelect = false;
             this.book_list_iz.Name = "book_list_iz";
             this.book_list_iz.Size = new System.Drawing.Size(411, 228);
@@ -867,7 +873,7 @@ namespace knjiznica_timtom
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "KnjigeForm";
             this.Text = "KnjigeForm";
             this.Load += new System.EventHandler(this.KnjigeForm_Load);
@@ -896,7 +902,7 @@ namespace knjiznica_timtom
         private System.Windows.Forms.Button change_button;
         private System.Windows.Forms.Button delete_button;
         private System.Windows.Forms.Button insert_button;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button search_button;
         private System.Windows.Forms.ComboBox section_combo;
         private System.Windows.Forms.TextBox search_text;
         private System.Windows.Forms.TabPage clani;
@@ -922,9 +928,9 @@ namespace knjiznica_timtom
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button search_clani_button;
+        private System.Windows.Forms.ComboBox section_clani_combo;
+        private System.Windows.Forms.TextBox search_clani_text;
         private System.Windows.Forms.Button odstranu_iz_seznama;
         private System.Windows.Forms.Button dodaj_na_seznam;
         private System.Windows.Forms.Button izpsosodi;

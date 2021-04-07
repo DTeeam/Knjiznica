@@ -73,19 +73,44 @@ namespace knjiznica_timtom
 
         public void deleteBook(Knjiga k)
         {
-
-
             conn.Open();
 
             using (SQLiteCommand com = new SQLiteCommand(conn))
             {
                 com.CommandText = "DELETE FROM books WHERE id = " + k.inventarna_stevilka + ";";
+                com.ExecuteNonQuery();
+                com.Dispose();
+            }
+
+            conn.Close();
+        }
+
+        public List<Sekcija> returnsekcije()
+        {
+            List<Sekcija> sekcije = new List<Sekcija>();
+
+            conn.Open();
+
+            using (SQLiteCommand com = new SQLiteCommand(conn))
+            {
+                com.CommandText = "SELECT * FROM sections;";
                 SQLiteDataReader getReader = com.ExecuteReader();
+
+                while(getReader.Read())
+                {
+                    Sekcija a = new Sekcija();
+                    a.id = getReader.GetInt32(0);
+                    a.ime = getReader.GetString(1);
+
+                    sekcije.Add(a);
+                }
+
                 com.Dispose();
             }
 
             conn.Close();
 
+            return sekcije;
         }
     }
 }
