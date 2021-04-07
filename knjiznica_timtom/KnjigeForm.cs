@@ -343,17 +343,7 @@ namespace knjiznica_timtom
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //int c = 1;
-            long c = 1;
-            Console.WriteLine(c);
-            for (int i = 0; i < 29; i++)
-            {
-               
-                    c = c *2;
-                Console.WriteLine(c);
-            }
-            c = c / 100;
-            MessageBox.Show("Tu mas svoj cent cipa " + c.ToString());
+
         }
 
         private void KnjigeForm_Load(object sender, EventArgs e)
