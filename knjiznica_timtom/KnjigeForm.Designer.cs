@@ -164,7 +164,7 @@ namespace knjiznica_timtom
             this.book_listView.Margin = new System.Windows.Forms.Padding(4);
             this.book_listView.MultiSelect = false;
             this.book_listView.Name = "book_listView";
-            this.book_listView.Size = new System.Drawing.Size(555, 306);
+            this.book_listView.Size = new System.Drawing.Size(590, 306);
             this.book_listView.TabIndex = 12;
             this.book_listView.TileSize = new System.Drawing.Size(10, 10);
             this.book_listView.UseCompatibleStateImageBehavior = false;
@@ -870,7 +870,7 @@ namespace knjiznica_timtom
             // 
             // insert
             // 
-            this.insert.Location = new System.Drawing.Point(603, 397);
+            this.insert.Location = new System.Drawing.Point(629, 394);
             this.insert.Name = "insert";
             this.insert.Size = new System.Drawing.Size(126, 26);
             this.insert.TabIndex = 13;
@@ -880,7 +880,7 @@ namespace knjiznica_timtom
             // 
             // edit
             // 
-            this.edit.Location = new System.Drawing.Point(603, 446);
+            this.edit.Location = new System.Drawing.Point(629, 443);
             this.edit.Name = "edit";
             this.edit.Size = new System.Drawing.Size(126, 24);
             this.edit.TabIndex = 14;
