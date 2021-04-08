@@ -66,6 +66,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClaniClass.cs" />
+    <Compile Include="DodajKnjigo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajKnjigo.Designer.cs">
+      <DependentUpon>DodajKnjigo.cs</DependentUpon>
+    </Compile>
     <Compile Include="IskanjeClass.cs" />
     <Compile Include="Classes.cs" />
     <Compile Include="DBClass.cs" />
