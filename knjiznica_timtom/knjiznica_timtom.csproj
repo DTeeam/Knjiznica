@@ -69,7 +69,6 @@
     <Compile Include="Classes.cs" />
     <Compile Include="database_addEdit_books_class.cs" />
     <Compile Include="DBClass.cs" />
-
     <Compile Include="DodajKnjigo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +92,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DodajKnjigo.resx">
+      <DependentUpon>DodajKnjigo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KnjigeForm.resx">
       <DependentUpon>KnjigeForm.cs</DependentUpon>
     </EmbeddedResource>

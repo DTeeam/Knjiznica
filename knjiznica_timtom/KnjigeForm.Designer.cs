@@ -102,6 +102,9 @@ namespace knjiznica_timtom
             this.label17 = new System.Windows.Forms.Label();
             this.sur_text = new System.Windows.Forms.TextBox();
             this.name_text = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.insert = new System.Windows.Forms.Button();
+            this.edit = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.knjige.SuspendLayout();
             this.clani.SuspendLayout();
@@ -126,6 +129,8 @@ namespace knjiznica_timtom
             // 
             // knjige
             // 
+            this.knjige.Controls.Add(this.edit);
+            this.knjige.Controls.Add(this.insert);
             this.knjige.Controls.Add(this.book_listView);
             this.knjige.Controls.Add(this.update_book_button);
             this.knjige.Controls.Add(this.label2);
@@ -139,7 +144,7 @@ namespace knjiznica_timtom
             this.knjige.Margin = new System.Windows.Forms.Padding(4);
             this.knjige.Name = "knjige";
             this.knjige.Padding = new System.Windows.Forms.Padding(3);
-            this.knjige.Size = new System.Drawing.Size(768, 400);
+            this.knjige.Size = new System.Drawing.Size(1027, 495);
             this.knjige.TabIndex = 0;
             this.knjige.Text = "Knjige";
             this.knjige.UseVisualStyleBackColor = true;
@@ -187,14 +192,14 @@ namespace knjiznica_timtom
             // 
             // update_book_button
             // 
-            this.update_book_button.Location = new System.Drawing.Point(595, 443);
+            this.update_book_button.Location = new System.Drawing.Point(447, 355);
             this.update_book_button.Margin = new System.Windows.Forms.Padding(4);
             this.update_book_button.Name = "update_book_button";
-            this.update_book_button.Size = new System.Drawing.Size(141, 28);
-            this.update_book_button.TabIndex = 11;
+            this.update_book_button.Size = new System.Drawing.Size(106, 23);
+            this.update_book_button.TabIndex = 6;
             this.update_book_button.Text = "Uredi";
             this.update_book_button.UseVisualStyleBackColor = true;
-            this.update_book_button.Click += new System.EventHandler(this.button2_Click);
+            this.update_book_button.Click += new System.EventHandler(this.change_button_Click);
             // 
             // label2
             // 
@@ -216,27 +221,6 @@ namespace knjiznica_timtom
             this.label1.TabIndex = 8;
             this.label1.Text = "Kategorije:";
             // 
-            // update_book_button
-            // 
-            this.update_book_button.Location = new System.Drawing.Point(447, 355);
-            this.update_book_button.Name = "update_book_button";
-            this.update_book_button.Size = new System.Drawing.Size(106, 23);
-            this.update_book_button.TabIndex = 6;
-            this.update_book_button.Text = "Uredi";
-            this.update_book_button.UseVisualStyleBackColor = true;
-            this.update_book_button.Click += new System.EventHandler(this.change_button_Click);
-            // 
-            // delete_button
-            // 
-            this.delete_button.Location = new System.Drawing.Point(881, 453);
-            this.delete_button.Margin = new System.Windows.Forms.Padding(4);
-            this.delete_button.Name = "delete_button";
-            this.delete_button.Size = new System.Drawing.Size(100, 28);
-            this.delete_button.TabIndex = 5;
-            this.delete_button.Text = "Zbriši";
-            this.delete_button.UseVisualStyleBackColor = true;
-            this.delete_button.Click += new System.EventHandler(this.delete_button_Click);
-            // 
             // insert_button
             // 
             this.insert_button.Location = new System.Drawing.Point(447, 326);
@@ -246,7 +230,18 @@ namespace knjiznica_timtom
             this.insert_button.Text = "Dodaj knjigo";
             this.insert_button.UseVisualStyleBackColor = true;
             this.insert_button.Click += new System.EventHandler(this.insert_button_Click);
-            //
+            // 
+            // delete_button
+            // 
+            this.delete_button.Location = new System.Drawing.Point(905, 460);
+            this.delete_button.Margin = new System.Windows.Forms.Padding(4);
+            this.delete_button.Name = "delete_button";
+            this.delete_button.Size = new System.Drawing.Size(100, 28);
+            this.delete_button.TabIndex = 5;
+            this.delete_button.Text = "Zbriši";
+            this.delete_button.UseVisualStyleBackColor = true;
+            this.delete_button.Click += new System.EventHandler(this.delete_button_Click);
+            // 
             // search_button
             // 
             this.search_button.Location = new System.Drawing.Point(629, 22);
@@ -288,7 +283,7 @@ namespace knjiznica_timtom
             this.clani.Margin = new System.Windows.Forms.Padding(4);
             this.clani.Name = "clani";
             this.clani.Padding = new System.Windows.Forms.Padding(3);
-            this.clani.Size = new System.Drawing.Size(768, 400);
+            this.clani.Size = new System.Drawing.Size(1027, 495);
             this.clani.TabIndex = 1;
             this.clani.Text = "Člani";
             this.clani.UseVisualStyleBackColor = true;
@@ -308,7 +303,7 @@ namespace knjiznica_timtom
             this.clani_combo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.clani_combo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.clani_combo.FormattingEnabled = true;
-            this.clani_combo.Location = new System.Drawing.Point(80, 20);
+            this.clani_combo.Location = new System.Drawing.Point(105, 24);
             this.clani_combo.Margin = new System.Windows.Forms.Padding(2);
             this.clani_combo.Name = "clani_combo";
             this.clani_combo.Size = new System.Drawing.Size(121, 24);
@@ -333,11 +328,11 @@ namespace knjiznica_timtom
             this.stanje_user_tab.Controls.Add(this.label4);
             this.stanje_user_tab.Controls.Add(this.return_butt);
             this.stanje_user_tab.Controls.Add(this.izposoje_listview);
-            this.stanje_user_tab.Location = new System.Drawing.Point(4, 22);
+            this.stanje_user_tab.Location = new System.Drawing.Point(4, 25);
             this.stanje_user_tab.Margin = new System.Windows.Forms.Padding(2);
             this.stanje_user_tab.Name = "stanje_user_tab";
             this.stanje_user_tab.Padding = new System.Windows.Forms.Padding(2);
-            this.stanje_user_tab.Size = new System.Drawing.Size(755, 315);
+            this.stanje_user_tab.Size = new System.Drawing.Size(1009, 391);
             this.stanje_user_tab.TabIndex = 0;
             this.stanje_user_tab.Text = "Stanje";
             this.stanje_user_tab.UseVisualStyleBackColor = true;
@@ -354,7 +349,7 @@ namespace knjiznica_timtom
             // return_butt
             // 
             this.return_butt.Enabled = false;
-            this.return_butt.Location = new System.Drawing.Point(351, 78);
+            this.return_butt.Location = new System.Drawing.Point(457, 55);
             this.return_butt.Margin = new System.Windows.Forms.Padding(2);
             this.return_butt.Name = "return_butt";
             this.return_butt.Size = new System.Drawing.Size(63, 33);
@@ -407,11 +402,11 @@ namespace knjiznica_timtom
             this.izposoja_user_tab.Controls.Add(this.izpsosodi);
             this.izposoja_user_tab.Controls.Add(this.booklist_zaiz);
             this.izposoja_user_tab.Controls.Add(this.book_list_iz);
-            this.izposoja_user_tab.Location = new System.Drawing.Point(4, 22);
+            this.izposoja_user_tab.Location = new System.Drawing.Point(4, 25);
             this.izposoja_user_tab.Margin = new System.Windows.Forms.Padding(2);
             this.izposoja_user_tab.Name = "izposoja_user_tab";
             this.izposoja_user_tab.Padding = new System.Windows.Forms.Padding(2);
-            this.izposoja_user_tab.Size = new System.Drawing.Size(755, 315);
+            this.izposoja_user_tab.Size = new System.Drawing.Size(1009, 391);
             this.izposoja_user_tab.TabIndex = 1;
             this.izposoja_user_tab.Text = "Izposodi";
             this.izposoja_user_tab.UseVisualStyleBackColor = true;
@@ -468,7 +463,7 @@ namespace knjiznica_timtom
             // odstranu_iz_seznama
             // 
             this.odstranu_iz_seznama.Enabled = false;
-            this.odstranu_iz_seznama.Location = new System.Drawing.Point(347, 168);
+            this.odstranu_iz_seznama.Location = new System.Drawing.Point(469, 260);
             this.odstranu_iz_seznama.Margin = new System.Windows.Forms.Padding(2);
             this.odstranu_iz_seznama.Name = "odstranu_iz_seznama";
             this.odstranu_iz_seznama.Size = new System.Drawing.Size(75, 23);
@@ -480,7 +475,7 @@ namespace knjiznica_timtom
             // dodaj_na_seznam
             // 
             this.dodaj_na_seznam.Enabled = false;
-            this.dodaj_na_seznam.Location = new System.Drawing.Point(347, 112);
+            this.dodaj_na_seznam.Location = new System.Drawing.Point(469, 178);
             this.dodaj_na_seznam.Margin = new System.Windows.Forms.Padding(2);
             this.dodaj_na_seznam.Name = "dodaj_na_seznam";
             this.dodaj_na_seznam.Size = new System.Drawing.Size(75, 23);
@@ -491,7 +486,7 @@ namespace knjiznica_timtom
             // 
             // izpsosodi
             // 
-            this.izpsosodi.Location = new System.Drawing.Point(538, 290);
+            this.izpsosodi.Location = new System.Drawing.Point(736, 364);
             this.izpsosodi.Margin = new System.Windows.Forms.Padding(2);
             this.izpsosodi.Name = "izpsosodi";
             this.izpsosodi.Size = new System.Drawing.Size(75, 23);
@@ -592,18 +587,18 @@ namespace knjiznica_timtom
             this.changedata_user_tab.Controls.Add(this.Ime);
             this.changedata_user_tab.Controls.Add(this.priimek_c_text);
             this.changedata_user_tab.Controls.Add(this.ime_c_text);
-            this.changedata_user_tab.Location = new System.Drawing.Point(4, 22);
+            this.changedata_user_tab.Location = new System.Drawing.Point(4, 25);
             this.changedata_user_tab.Margin = new System.Windows.Forms.Padding(2);
             this.changedata_user_tab.Name = "changedata_user_tab";
             this.changedata_user_tab.Padding = new System.Windows.Forms.Padding(2);
-            this.changedata_user_tab.Size = new System.Drawing.Size(755, 315);
+            this.changedata_user_tab.Size = new System.Drawing.Size(1009, 391);
             this.changedata_user_tab.TabIndex = 2;
             this.changedata_user_tab.Text = "Spremeni podatke";
             this.changedata_user_tab.UseVisualStyleBackColor = true;
             // 
             // zbrisi_user
             // 
-            this.zbrisi_user.Location = new System.Drawing.Point(634, 286);
+            this.zbrisi_user.Location = new System.Drawing.Point(845, 350);
             this.zbrisi_user.Margin = new System.Windows.Forms.Padding(2);
             this.zbrisi_user.Name = "zbrisi_user";
             this.zbrisi_user.Size = new System.Drawing.Size(147, 23);
@@ -614,7 +609,7 @@ namespace knjiznica_timtom
             // 
             // spremeni_podatke
             // 
-            this.spremeni_podatke.Location = new System.Drawing.Point(122, 266);
+            this.spremeni_podatke.Location = new System.Drawing.Point(129, 286);
             this.spremeni_podatke.Margin = new System.Windows.Forms.Padding(2);
             this.spremeni_podatke.Name = "spremeni_podatke";
             this.spremeni_podatke.Size = new System.Drawing.Size(159, 23);
@@ -626,7 +621,7 @@ namespace knjiznica_timtom
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(276, 226);
+            this.label11.Location = new System.Drawing.Point(277, 197);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(57, 17);
             this.label11.TabIndex = 15;
@@ -635,7 +630,7 @@ namespace knjiznica_timtom
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(47, 226);
+            this.label12.Location = new System.Drawing.Point(32, 197);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(46, 17);
             this.label12.TabIndex = 14;
@@ -643,7 +638,7 @@ namespace knjiznica_timtom
             // 
             // notes_c_text
             // 
-            this.notes_c_text.Location = new System.Drawing.Point(209, 216);
+            this.notes_c_text.Location = new System.Drawing.Point(279, 226);
             this.notes_c_text.Margin = new System.Windows.Forms.Padding(2);
             this.notes_c_text.Name = "notes_c_text";
             this.notes_c_text.Size = new System.Drawing.Size(176, 22);
@@ -651,7 +646,7 @@ namespace knjiznica_timtom
             // 
             // email_c_text
             // 
-            this.email_c_text.Location = new System.Drawing.Point(35, 216);
+            this.email_c_text.Location = new System.Drawing.Point(35, 226);
             this.email_c_text.Margin = new System.Windows.Forms.Padding(2);
             this.email_c_text.Name = "email_c_text";
             this.email_c_text.Size = new System.Drawing.Size(176, 22);
@@ -660,7 +655,7 @@ namespace knjiznica_timtom
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(276, 132);
+            this.label9.Location = new System.Drawing.Point(276, 112);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(55, 17);
             this.label9.TabIndex = 11;
@@ -669,7 +664,7 @@ namespace knjiznica_timtom
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(44, 132);
+            this.label10.Location = new System.Drawing.Point(32, 112);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(60, 17);
             this.label10.TabIndex = 10;
@@ -677,7 +672,7 @@ namespace knjiznica_timtom
             // 
             // naslov_c_text
             // 
-            this.naslov_c_text.Location = new System.Drawing.Point(209, 140);
+            this.naslov_c_text.Location = new System.Drawing.Point(279, 140);
             this.naslov_c_text.Margin = new System.Windows.Forms.Padding(2);
             this.naslov_c_text.Name = "naslov_c_text";
             this.naslov_c_text.Size = new System.Drawing.Size(176, 22);
@@ -703,7 +698,7 @@ namespace knjiznica_timtom
             // Ime
             // 
             this.Ime.AutoSize = true;
-            this.Ime.Location = new System.Drawing.Point(47, 25);
+            this.Ime.Location = new System.Drawing.Point(32, 25);
             this.Ime.Name = "Ime";
             this.Ime.Size = new System.Drawing.Size(34, 17);
             this.Ime.TabIndex = 6;
@@ -711,7 +706,7 @@ namespace knjiznica_timtom
             // 
             // priimek_c_text
             // 
-            this.priimek_c_text.Location = new System.Drawing.Point(209, 53);
+            this.priimek_c_text.Location = new System.Drawing.Point(279, 53);
             this.priimek_c_text.Margin = new System.Windows.Forms.Padding(2);
             this.priimek_c_text.Name = "priimek_c_text";
             this.priimek_c_text.Size = new System.Drawing.Size(176, 22);
@@ -727,6 +722,7 @@ namespace knjiznica_timtom
             // 
             // dodajclana
             // 
+            this.dodajclana.Controls.Add(this.label18);
             this.dodajclana.Controls.Add(this.dodaj_clana);
             this.dodajclana.Controls.Add(this.label7);
             this.dodajclana.Controls.Add(this.label13);
@@ -740,18 +736,18 @@ namespace knjiznica_timtom
             this.dodajclana.Controls.Add(this.label17);
             this.dodajclana.Controls.Add(this.sur_text);
             this.dodajclana.Controls.Add(this.name_text);
-            this.dodajclana.Location = new System.Drawing.Point(4, 22);
+            this.dodajclana.Location = new System.Drawing.Point(4, 25);
             this.dodajclana.Margin = new System.Windows.Forms.Padding(2);
             this.dodajclana.Name = "dodajclana";
             this.dodajclana.Padding = new System.Windows.Forms.Padding(2);
-            this.dodajclana.Size = new System.Drawing.Size(768, 400);
+            this.dodajclana.Size = new System.Drawing.Size(1027, 495);
             this.dodajclana.TabIndex = 2;
             this.dodajclana.Text = "Dodaj ćlana";
             this.dodajclana.UseVisualStyleBackColor = true;
             // 
             // dodaj_clana
             // 
-            this.dodaj_clana.Location = new System.Drawing.Point(118, 277);
+            this.dodaj_clana.Location = new System.Drawing.Point(157, 419);
             this.dodaj_clana.Margin = new System.Windows.Forms.Padding(2);
             this.dodaj_clana.Name = "dodaj_clana";
             this.dodaj_clana.Size = new System.Drawing.Size(159, 23);
@@ -763,7 +759,7 @@ namespace knjiznica_timtom
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(269, 239);
+            this.label7.Location = new System.Drawing.Point(261, 296);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 17);
             this.label7.TabIndex = 28;
@@ -772,7 +768,7 @@ namespace knjiznica_timtom
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(41, 239);
+            this.label13.Location = new System.Drawing.Point(33, 296);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(46, 17);
             this.label13.TabIndex = 27;
@@ -780,7 +776,7 @@ namespace knjiznica_timtom
             // 
             // notes_text
             // 
-            this.notes_text.Location = new System.Drawing.Point(205, 227);
+            this.notes_text.Location = new System.Drawing.Point(264, 336);
             this.notes_text.Margin = new System.Windows.Forms.Padding(2);
             this.notes_text.Name = "notes_text";
             this.notes_text.Size = new System.Drawing.Size(176, 22);
@@ -788,7 +784,7 @@ namespace knjiznica_timtom
             // 
             // mail_text
             // 
-            this.mail_text.Location = new System.Drawing.Point(31, 227);
+            this.mail_text.Location = new System.Drawing.Point(23, 336);
             this.mail_text.Margin = new System.Windows.Forms.Padding(2);
             this.mail_text.Name = "mail_text";
             this.mail_text.Size = new System.Drawing.Size(176, 22);
@@ -797,7 +793,7 @@ namespace knjiznica_timtom
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(269, 145);
+            this.label14.Location = new System.Drawing.Point(261, 202);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(55, 17);
             this.label14.TabIndex = 24;
@@ -806,7 +802,7 @@ namespace knjiznica_timtom
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(37, 145);
+            this.label15.Location = new System.Drawing.Point(29, 202);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(60, 17);
             this.label15.TabIndex = 23;
@@ -814,7 +810,7 @@ namespace knjiznica_timtom
             // 
             // add_text
             // 
-            this.add_text.Location = new System.Drawing.Point(205, 150);
+            this.add_text.Location = new System.Drawing.Point(264, 221);
             this.add_text.Margin = new System.Windows.Forms.Padding(2);
             this.add_text.Name = "add_text";
             this.add_text.Size = new System.Drawing.Size(176, 22);
@@ -822,7 +818,7 @@ namespace knjiznica_timtom
             // 
             // tel_text
             // 
-            this.tel_text.Location = new System.Drawing.Point(31, 150);
+            this.tel_text.Location = new System.Drawing.Point(23, 221);
             this.tel_text.Margin = new System.Windows.Forms.Padding(2);
             this.tel_text.Name = "tel_text";
             this.tel_text.Size = new System.Drawing.Size(176, 22);
@@ -831,7 +827,7 @@ namespace knjiznica_timtom
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(269, 38);
+            this.label16.Location = new System.Drawing.Point(261, 95);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(58, 17);
             this.label16.TabIndex = 20;
@@ -840,7 +836,7 @@ namespace knjiznica_timtom
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(41, 38);
+            this.label17.Location = new System.Drawing.Point(33, 95);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(34, 17);
             this.label17.TabIndex = 19;
@@ -848,7 +844,7 @@ namespace knjiznica_timtom
             // 
             // sur_text
             // 
-            this.sur_text.Location = new System.Drawing.Point(205, 63);
+            this.sur_text.Location = new System.Drawing.Point(264, 120);
             this.sur_text.Margin = new System.Windows.Forms.Padding(2);
             this.sur_text.Name = "sur_text";
             this.sur_text.Size = new System.Drawing.Size(176, 22);
@@ -856,11 +852,40 @@ namespace knjiznica_timtom
             // 
             // name_text
             // 
-            this.name_text.Location = new System.Drawing.Point(31, 63);
+            this.name_text.Location = new System.Drawing.Point(23, 120);
             this.name_text.Margin = new System.Windows.Forms.Padding(2);
             this.name_text.Name = "name_text";
             this.name_text.Size = new System.Drawing.Size(176, 22);
             this.name_text.TabIndex = 17;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(26, 33);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(166, 32);
+            this.label18.TabIndex = 30;
+            this.label18.Text = "Dodaj člana";
+            // 
+            // insert
+            // 
+            this.insert.Location = new System.Drawing.Point(603, 397);
+            this.insert.Name = "insert";
+            this.insert.Size = new System.Drawing.Size(126, 26);
+            this.insert.TabIndex = 13;
+            this.insert.Text = "Dodaj knjigo";
+            this.insert.UseVisualStyleBackColor = true;
+            this.insert.Click += new System.EventHandler(this.insert_button_Click);
+            // 
+            // edit
+            // 
+            this.edit.Location = new System.Drawing.Point(603, 446);
+            this.edit.Name = "edit";
+            this.edit.Size = new System.Drawing.Size(126, 24);
+            this.edit.TabIndex = 14;
+            this.edit.Text = "Uredi";
+            this.edit.UseVisualStyleBackColor = true;
             // 
             // KnjigeForm
             // 
@@ -966,10 +991,8 @@ namespace knjiznica_timtom
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox sur_text;
         private System.Windows.Forms.TextBox name_text;
-        private System.Windows.Forms.ListView book_listView;
-        private System.Windows.Forms.ColumnHeader st;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button edit;
+        private System.Windows.Forms.Button insert;
     }
 }
