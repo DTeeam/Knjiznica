@@ -269,6 +269,7 @@ namespace knjiznica_timtom
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.add_book_button);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DodajKnjigo";
             this.Text = "DodajKnjigo";

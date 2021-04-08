@@ -46,10 +46,9 @@ namespace knjiznica_timtom
 
             using (SQLiteCommand com = new SQLiteCommand(conn))
             {
-                com.CommandText = "INSERT INTO books(title, shop," +
-                        "notes, section_id, year, author, publisher, lost)" +
+                com.CommandText = "INSERT INTO books(title, shop, notes, section_id, year, author, publisher, lost)" +
                     "VALUES('" + k.naslov + "', " + k.pridobitev + ", '" + k.zapiski + "'," +
-                        "(SELECT id FROM sections WHERE name = '" + k.udk + "'), " + k.leto + ", '" + k.avtor + "', '" + k.zalozba + "', " + k.izgubljena + "); ";
+                    "(SELECT id FROM sections WHERE name = '" + k.udk + "'), " + k.leto + ", '" + k.avtor + "', '" + k.zalozba + "', " + k.izgubljena + "); ";
 
                 com.ExecuteNonQuery();
 
