@@ -31,6 +31,8 @@ namespace knjiznica_timtom
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.knjige = new System.Windows.Forms.TabPage();
+            this.edit = new System.Windows.Forms.Button();
+            this.insert = new System.Windows.Forms.Button();
             this.book_listView = new System.Windows.Forms.ListView();
             this.st = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -89,6 +91,7 @@ namespace knjiznica_timtom
             this.priimek_c_text = new System.Windows.Forms.TextBox();
             this.ime_c_text = new System.Windows.Forms.TextBox();
             this.dodajclana = new System.Windows.Forms.TabPage();
+            this.label18 = new System.Windows.Forms.Label();
             this.dodaj_clana = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -102,9 +105,6 @@ namespace knjiznica_timtom
             this.label17 = new System.Windows.Forms.Label();
             this.sur_text = new System.Windows.Forms.TextBox();
             this.name_text = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.insert = new System.Windows.Forms.Button();
-            this.edit = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.knjige.SuspendLayout();
             this.clani.SuspendLayout();
@@ -150,6 +150,25 @@ namespace knjiznica_timtom
             this.knjige.UseVisualStyleBackColor = true;
             this.knjige.Enter += new System.EventHandler(this.tabPage1_Enter);
             // 
+            // edit
+            // 
+            this.edit.Location = new System.Drawing.Point(629, 443);
+            this.edit.Name = "edit";
+            this.edit.Size = new System.Drawing.Size(126, 24);
+            this.edit.TabIndex = 14;
+            this.edit.Text = "Uredi";
+            this.edit.UseVisualStyleBackColor = true;
+            // 
+            // insert
+            // 
+            this.insert.Location = new System.Drawing.Point(629, 394);
+            this.insert.Name = "insert";
+            this.insert.Size = new System.Drawing.Size(126, 26);
+            this.insert.TabIndex = 13;
+            this.insert.Text = "Dodaj knjigo";
+            this.insert.UseVisualStyleBackColor = true;
+            this.insert.Click += new System.EventHandler(this.insert_button_Click);
+            // 
             // book_listView
             // 
             this.book_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -169,6 +188,7 @@ namespace knjiznica_timtom
             this.book_listView.TileSize = new System.Drawing.Size(10, 10);
             this.book_listView.UseCompatibleStateImageBehavior = false;
             this.book_listView.View = System.Windows.Forms.View.Details;
+            this.book_listView.SelectedIndexChanged += new System.EventHandler(this.book_listView_SelectedIndexChanged);
             // 
             // st
             // 
@@ -745,6 +765,16 @@ namespace knjiznica_timtom
             this.dodajclana.Text = "Dodaj ćlana";
             this.dodajclana.UseVisualStyleBackColor = true;
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(26, 33);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(166, 32);
+            this.label18.TabIndex = 30;
+            this.label18.Text = "Dodaj člana";
+            // 
             // dodaj_clana
             // 
             this.dodaj_clana.Location = new System.Drawing.Point(157, 419);
@@ -857,35 +887,6 @@ namespace knjiznica_timtom
             this.name_text.Name = "name_text";
             this.name_text.Size = new System.Drawing.Size(176, 22);
             this.name_text.TabIndex = 17;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(26, 33);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(166, 32);
-            this.label18.TabIndex = 30;
-            this.label18.Text = "Dodaj člana";
-            // 
-            // insert
-            // 
-            this.insert.Location = new System.Drawing.Point(629, 394);
-            this.insert.Name = "insert";
-            this.insert.Size = new System.Drawing.Size(126, 26);
-            this.insert.TabIndex = 13;
-            this.insert.Text = "Dodaj knjigo";
-            this.insert.UseVisualStyleBackColor = true;
-            this.insert.Click += new System.EventHandler(this.insert_button_Click);
-            // 
-            // edit
-            // 
-            this.edit.Location = new System.Drawing.Point(629, 443);
-            this.edit.Name = "edit";
-            this.edit.Size = new System.Drawing.Size(126, 24);
-            this.edit.TabIndex = 14;
-            this.edit.Text = "Uredi";
-            this.edit.UseVisualStyleBackColor = true;
             // 
             // KnjigeForm
             // 
