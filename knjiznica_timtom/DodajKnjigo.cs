@@ -20,7 +20,14 @@ namespace knjiznica_timtom
             InitializeComponent();
 
             booklist = db.getSections();
-            foreach(Knjiga k in booklist)
+            updateUDK();
+        }
+
+        private void updateUDK()
+        {
+            booklist = db.getSections();
+            udk_combo.Items.Clear();
+            foreach (Knjiga k in booklist)
             {
                 udk_combo.Items.Add(k.udk);
             }
@@ -28,17 +35,59 @@ namespace knjiznica_timtom
 
         private void add_book_button_Click(object sender, EventArgs e)
         {
+            int exists = 0;
+
             k.naslov = title_textBox.Text;
             k.avtor = author_textBox.Text;
-            k.udk = udk_combo.SelectedItem.ToString();
+            k.udk = udk_combo.Text;
+            string udkS = udk_combo.Text;
             k.leto = Convert.ToInt32(year_numUpDown.Value);
             k.zalozba = publisher_textBox.Text;
             k.pridobitev = shop_checkedList.SelectedIndex;
             k.izgubljena = lost_checkedList.SelectedIndex;
             k.zapiski = notes_RtextBox.Text;
 
-            db.addBook(k);
-            MessageBox.Show("Knjiga uspešno dodana.");
+            foreach (Knjiga item in booklist)
+            {
+                if (item.udk == udkS)
+                    exists = 1;
+            }
+
+            if (exists == 1)
+            {
+                db.addBook(k);
+                clearAll();
+                MessageBox.Show("Knjiga uspešno dodana.");
+            }
+
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("Kategorija " + udkS +
+                    " še ne obstaja.Ali jo želite dodati sedaj ? ", "Napaka", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    db.addSection(k);
+                    db.addBook(k);
+                    updateUDK();
+                    clearAll();
+                    MessageBox.Show("Knjiga uspešno dodana.");
+                }
+                else if (dialogResult == DialogResult.No)
+                    updateUDK();
+                
+            }
+        }
+
+        private void clearAll()
+        {
+            title_textBox.Clear();
+            author_textBox.Clear();
+            udk_combo.Text = null;
+            year_numUpDown.Value = 1900;
+            publisher_textBox.Clear();
+            shop_checkedList.Items.Clear();
+            lost_checkedList.Items.Clear();
+            notes_RtextBox.Clear();
         }
 
         private void shop_checkedList_ItemCheck(object sender, ItemCheckEventArgs e)

@@ -58,5 +58,22 @@ namespace knjiznica_timtom
 
             conn.Close();
         }
+        public void addSection(Knjiga k)
+        {
+            conn.Open();
+
+
+            using (SQLiteCommand com = new SQLiteCommand(conn))
+            {
+                com.CommandText = "INSERT INTO sections(name) VALUES('" + k.udk + "'); ";
+
+                com.ExecuteNonQuery();
+
+                com.Dispose();
+            }
+
+
+            conn.Close();
+        }
     }
 }
