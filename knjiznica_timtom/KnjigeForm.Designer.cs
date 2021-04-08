@@ -31,17 +31,16 @@ namespace knjiznica_timtom
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.knjige = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
             this.book_listView = new System.Windows.Forms.ListView();
             this.st = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.update_book_button = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.change_button = new System.Windows.Forms.Button();
-            this.delete_button = new System.Windows.Forms.Button();
             this.insert_button = new System.Windows.Forms.Button();
+            this.delete_button = new System.Windows.Forms.Button();
             this.search_button = new System.Windows.Forms.Button();
             this.section_combo = new System.Windows.Forms.ComboBox();
             this.search_text = new System.Windows.Forms.TextBox();
@@ -127,13 +126,12 @@ namespace knjiznica_timtom
             // 
             // knjige
             // 
-            this.knjige.Controls.Add(this.button2);
             this.knjige.Controls.Add(this.book_listView);
+            this.knjige.Controls.Add(this.update_book_button);
             this.knjige.Controls.Add(this.label2);
             this.knjige.Controls.Add(this.label1);
-            this.knjige.Controls.Add(this.change_button);
-            this.knjige.Controls.Add(this.delete_button);
             this.knjige.Controls.Add(this.insert_button);
+            this.knjige.Controls.Add(this.delete_button);
             this.knjige.Controls.Add(this.search_button);
             this.knjige.Controls.Add(this.section_combo);
             this.knjige.Controls.Add(this.search_text);
@@ -147,17 +145,6 @@ namespace knjiznica_timtom
             this.knjige.UseVisualStyleBackColor = true;
             this.knjige.Enter += new System.EventHandler(this.tabPage1_Enter);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(596, 438);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(141, 28);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Shrani";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // book_listView
             // 
             this.book_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -168,16 +155,15 @@ namespace knjiznica_timtom
             this.book_listView.FullRowSelect = true;
             this.book_listView.HideSelection = false;
             this.book_listView.LabelEdit = true;
-            this.book_listView.Location = new System.Drawing.Point(32, 160);
+            this.book_listView.Location = new System.Drawing.Point(32, 164);
             this.book_listView.Margin = new System.Windows.Forms.Padding(4);
             this.book_listView.MultiSelect = false;
             this.book_listView.Name = "book_listView";
             this.book_listView.Size = new System.Drawing.Size(555, 306);
-            this.book_listView.TabIndex = 10;
+            this.book_listView.TabIndex = 12;
             this.book_listView.TileSize = new System.Drawing.Size(10, 10);
             this.book_listView.UseCompatibleStateImageBehavior = false;
             this.book_listView.View = System.Windows.Forms.View.Details;
-            this.book_listView.SelectedIndexChanged += new System.EventHandler(this.book_listView_SelectedIndexChanged);
             // 
             // st
             // 
@@ -199,6 +185,17 @@ namespace knjiznica_timtom
             this.columnHeader3.Text = "Na voljo:";
             this.columnHeader3.Width = 71;
             // 
+            // update_book_button
+            // 
+            this.update_book_button.Location = new System.Drawing.Point(595, 443);
+            this.update_book_button.Margin = new System.Windows.Forms.Padding(4);
+            this.update_book_button.Name = "update_book_button";
+            this.update_book_button.Size = new System.Drawing.Size(141, 28);
+            this.update_book_button.TabIndex = 11;
+            this.update_book_button.Text = "Uredi";
+            this.update_book_button.UseVisualStyleBackColor = true;
+            this.update_book_button.Click += new System.EventHandler(this.button2_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -219,16 +216,15 @@ namespace knjiznica_timtom
             this.label1.TabIndex = 8;
             this.label1.Text = "Kategorije:";
             // 
-            // change_button
+            // insert_button
             // 
-            this.change_button.Location = new System.Drawing.Point(596, 399);
-            this.change_button.Margin = new System.Windows.Forms.Padding(4);
-            this.change_button.Name = "change_button";
-            this.change_button.Size = new System.Drawing.Size(141, 28);
-            this.change_button.TabIndex = 6;
-            this.change_button.Text = "Uredi";
-            this.change_button.UseVisualStyleBackColor = true;
-            this.change_button.Click += new System.EventHandler(this.change_button_Click);
+            this.insert_button.Location = new System.Drawing.Point(595, 404);
+            this.insert_button.Margin = new System.Windows.Forms.Padding(4);
+            this.insert_button.Name = "insert_button";
+            this.insert_button.Size = new System.Drawing.Size(141, 28);
+            this.insert_button.TabIndex = 6;
+            this.insert_button.Text = "Dodaj knjigo";
+            this.insert_button.UseVisualStyleBackColor = true;
             // 
             // delete_button
             // 
@@ -240,16 +236,6 @@ namespace knjiznica_timtom
             this.delete_button.Text = "Zbriši";
             this.delete_button.UseVisualStyleBackColor = true;
             this.delete_button.Click += new System.EventHandler(this.delete_button_Click);
-            // 
-            // insert_button
-            // 
-            this.insert_button.Location = new System.Drawing.Point(860, 160);
-            this.insert_button.Margin = new System.Windows.Forms.Padding(4);
-            this.insert_button.Name = "insert_button";
-            this.insert_button.Size = new System.Drawing.Size(141, 28);
-            this.insert_button.TabIndex = 4;
-            this.insert_button.Text = "Vnesi knjigo";
-            this.insert_button.UseVisualStyleBackColor = true;
             // 
             // search_button
             // 
@@ -899,7 +885,6 @@ namespace knjiznica_timtom
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage knjige;
-        private System.Windows.Forms.Button change_button;
         private System.Windows.Forms.Button delete_button;
         private System.Windows.Forms.Button insert_button;
         private System.Windows.Forms.Button search_button;
@@ -908,12 +893,7 @@ namespace knjiznica_timtom
         private System.Windows.Forms.TabPage clani;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView book_listView;
-        private System.Windows.Forms.ColumnHeader st;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button update_book_button;
         private System.Windows.Forms.ComboBox clani_combo;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage stanje_user_tab;
@@ -971,5 +951,10 @@ namespace knjiznica_timtom
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox sur_text;
         private System.Windows.Forms.TextBox name_text;
+        private System.Windows.Forms.ListView book_listView;
+        private System.Windows.Forms.ColumnHeader st;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
     }
 }
