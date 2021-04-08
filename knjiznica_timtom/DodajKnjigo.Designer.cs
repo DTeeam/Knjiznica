@@ -1,4 +1,3 @@
-﻿
 namespace knjiznica_timtom
 {
     partial class DodajKnjigo
@@ -248,9 +247,11 @@ namespace knjiznica_timtom
             this.ResumeLayout(false);
             this.PerformLayout();
 
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "DodajKnjigo";
         }
-
-        #endregion
 
         private System.Windows.Forms.Button add_book_button;
         private System.Windows.Forms.Label label2;

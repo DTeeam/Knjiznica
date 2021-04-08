@@ -42,7 +42,7 @@ namespace knjiznica_timtom
 
             using (SQLiteCommand com = new SQLiteCommand(conn))
             {
-                com.CommandText = "SELECT b.*, r.state FROM books b  LEFT OUTER JOIN rents r ON b.id = r.book_id GROUP BY b.id;";
+                com.CommandText = "SELECT b.*, r1.state FROM books b LEFT OUTER JOIN (SELECT book_id, MAX(id) AS latest FROM rents GROUP BY book_id) AS rent ON rent.book_id = b.id LEFT OUTER JOIN rents r1 ON rent.book_id = r1.book_id AND r1.id = rent.latest GROUP BY b.id";
 
                 SQLiteDataReader reader = com.ExecuteReader();
 
@@ -73,19 +73,44 @@ namespace knjiznica_timtom
 
         public void deleteBook(Knjiga k)
         {
-
-
             conn.Open();
 
             using (SQLiteCommand com = new SQLiteCommand(conn))
             {
                 com.CommandText = "DELETE FROM books WHERE id = " + k.inventarna_stevilka + ";";
+                com.ExecuteNonQuery();
+                com.Dispose();
+            }
+
+            conn.Close();
+        }
+
+        public List<Sekcija> returnsekcije()
+        {
+            List<Sekcija> sekcije = new List<Sekcija>();
+
+            conn.Open();
+
+            using (SQLiteCommand com = new SQLiteCommand(conn))
+            {
+                com.CommandText = "SELECT * FROM sections;";
                 SQLiteDataReader getReader = com.ExecuteReader();
+
+                while(getReader.Read())
+                {
+                    Sekcija a = new Sekcija();
+                    a.id = getReader.GetInt32(0);
+                    a.ime = getReader.GetString(1);
+
+                    sekcije.Add(a);
+                }
+
                 com.Dispose();
             }
 
             conn.Close();
 
+            return sekcije;
         }
     }
 }

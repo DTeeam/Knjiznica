@@ -52,4 +52,10 @@ namespace knjiznica_timtom
         public string datum_izposoje { get; set; }
 
     }
+
+    public class Sekcija
+    {
+        public int id { get; set; }
+        public string ime { get; set; }
+    }
 }

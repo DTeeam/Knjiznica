@@ -54,7 +54,7 @@ namespace knjiznica_timtom
 
             using (SQLiteCommand com = new SQLiteCommand(conn))
             {
-                com.CommandText = "SELECT * FROM rents WHERE user_id = "+ clan_id +";";
+                com.CommandText = "SELECT * FROM rents WHERE user_id = "+ clan_id +" AND state = 1;";
 
                 SQLiteDataReader reader = com.ExecuteReader();
 
@@ -175,7 +175,7 @@ namespace knjiznica_timtom
 
             using (SQLiteCommand com = new SQLiteCommand(conn))
             {
-                com.CommandText = "SELECT b.*, r.state FROM books b  LEFT OUTER JOIN rents r ON b.id = r.book_id WHERE r.state IS NOT 1 GROUP BY b.id;";
+                com.CommandText = "SELECT b.*, r1.state FROM books b LEFT OUTER JOIN (SELECT book_id, MAX(id) AS latest FROM rents GROUP BY book_id) AS rent ON rent.book_id = b.id LEFT OUTER JOIN rents r1 ON rent.book_id = r1.book_id AND r1.id = rent.latest GROUP BY b.id";
 
                 SQLiteDataReader reader = com.ExecuteReader();
 
@@ -193,7 +193,8 @@ namespace knjiznica_timtom
                     else
                         a.zasedena = reader.GetInt32(9);
 
-                    list.Add(a);
+                    if(a.zasedena == 0)
+                        list.Add(a);
                 }
 
                 com.Dispose();
