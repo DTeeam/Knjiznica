@@ -12,24 +12,24 @@ namespace knjiznica_timtom
 {
     public partial class DodajKnjigo : Form
     {
-        List<Knjiga> booklist;
+        List<Sekcija> sekcije;
         Knjiga k = new Knjiga();
         database_addEdit_books_class db = new database_addEdit_books_class();
         public DodajKnjigo()
         {
             InitializeComponent();
 
-            booklist = db.getSections();
+            sekcije = db.getSections();
             updateUDK();
         }
 
         private void updateUDK()
         {
-            booklist = db.getSections();
+            sekcije = db.getSections();
             udk_combo.Items.Clear();
-            foreach (Knjiga k in booklist)
+            foreach (Sekcija s in sekcije)
             {
-                udk_combo.Items.Add(k.udk);
+                udk_combo.Items.Add(s.ime);
             }
         }
 
@@ -47,9 +47,9 @@ namespace knjiznica_timtom
             k.izgubljena = lost_checkedList.SelectedIndex;
             k.zapiski = notes_RtextBox.Text;
 
-            foreach (Knjiga item in booklist)
+            foreach (Sekcija item in sekcije)
             {
-                if (item.udk == udkS)
+                if (item.ime == udkS)
                     exists = 1;
             }
 
@@ -74,7 +74,6 @@ namespace knjiznica_timtom
                 }
                 else if (dialogResult == DialogResult.No)
                     updateUDK();
-                
             }
         }
 

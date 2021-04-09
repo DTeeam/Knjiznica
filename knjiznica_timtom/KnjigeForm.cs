@@ -25,7 +25,6 @@ namespace knjiznica_timtom
 
         int id = 0;
         int clan_id = 0;
-        int timy = 0;
 
         bool spremembe = false;
 
@@ -56,7 +55,6 @@ namespace knjiznica_timtom
 
         private void book_listView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            timy = 1;
             string item = string.Empty;
 
             for (int i = 0; i < book_listView.SelectedItems.Count; i++)

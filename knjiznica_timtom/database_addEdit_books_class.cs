@@ -11,23 +11,24 @@ namespace knjiznica_timtom
     {
         SQLiteConnection conn = new SQLiteConnection("data source=library_DB_testData.sqlite");
 
-        public List<Knjiga> getSections()
+        public List<Sekcija> getSections()
         {
-            List<Knjiga> list = new List<Knjiga>();
+            List<Sekcija> list = new List<Sekcija>();
 
             conn.Open();
 
             using (SQLiteCommand com = new SQLiteCommand(conn))
             {
-                com.CommandText = "SELECT name FROM sections;";
+                com.CommandText = "SELECT * FROM sections;";
 
                 SQLiteDataReader reader = com.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    Knjiga a = new Knjiga();
+                    Sekcija a = new Sekcija();
 
-                    a.udk = reader.GetString(0);
+                    a.id = reader.GetInt32(0);
+                    a.ime = reader.GetString(1);
 
                     list.Add(a);
                 }
