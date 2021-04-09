@@ -440,10 +440,19 @@ namespace knjiznica_timtom
 
         private void insert_button_Click(object sender, EventArgs e)
         {
-            //this.Hide();
             var dodaj = new DodajKnjigo();
-            //dodaj.FormClosed += (s, args) => this.Close();
             dodaj.Show();
+        }
+
+        private void edit_Click(object sender, EventArgs e)
+        {
+            if (id != 0)
+            {
+                var posodobi = new PosodobiKnjigo(id);
+                posodobi.Show();
+            }
+            else
+                MessageBox.Show("Prosim, izberite knjigo za urejanje.");
         }
     }
 }

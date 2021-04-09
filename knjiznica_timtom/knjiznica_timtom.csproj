@@ -67,7 +67,8 @@
   <ItemGroup>
     <Compile Include="ClaniClass.cs" />
     <Compile Include="Classes.cs" />
-    <Compile Include="database_addEdit_books_class.cs" />
+    <Compile Include="database_add_books_class.cs" />
+    <Compile Include="database_update_books_class.cs" />
     <Compile Include="DBClass.cs" />
     <Compile Include="DodajKnjigo.cs">
       <SubType>Form</SubType>
@@ -84,6 +85,12 @@
     <Compile Include="KnjigeForm.Designer.cs">
       <DependentUpon>KnjigeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PosodobiKnjigo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PosodobiKnjigo.Designer.cs">
+      <DependentUpon>PosodobiKnjigo.cs</DependentUpon>
+    </Compile>
     <Compile Include="PrijavaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KnjigeForm.resx">
       <DependentUpon>KnjigeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PosodobiKnjigo.resx">
+      <DependentUpon>PosodobiKnjigo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrijavaForm.resx">
       <DependentUpon>PrijavaForm.cs</DependentUpon>

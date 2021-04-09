@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace knjiznica_timtom
 {
-    class database_addEdit_books_class
+    class database_add_books_class
     {
         SQLiteConnection conn = new SQLiteConnection("data source=library_DB_testData.sqlite");
 
