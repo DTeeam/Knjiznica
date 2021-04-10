@@ -19,7 +19,6 @@ namespace knjiznica_timtom
 
             using (SQLiteCommand com = new SQLiteCommand(conn))
             {
-                //TODO
                 com.CommandText = "SELECT b.*, s.name FROM books b INNER JOIN sections s ON s.id = b.section_id WHERE b.id = " + id + ";";
 
                 SQLiteDataReader reader = com.ExecuteReader();
@@ -55,16 +54,7 @@ namespace knjiznica_timtom
 
             using (SQLiteCommand com = new SQLiteCommand(conn))
             {
-                com.CommandText = "UPDATE books" +
-                    "SET title = '" + k.naslov + "'," +
-                    "    shop = " + k.pridobitev + ", " +
-                    "    notes = '" + k.zapiski+ "', " +
-                    "    section_id = (SELECT id FROM sections WHERE name = '" + k.udk + "'), " +
-                    "    year = " + k.leto + ", " +
-                    "    author = '" + k.avtor + "', " +
-                    "    publisher = '" + k.zalozba + "', " +
-                    "    lost = " + k.izgubljena + "" +
-                    "WHERE id = " + id + ";";
+                com.CommandText =  "UPDATE books SET title = '" + k.naslov + "', shop = " + k.pridobitev + ", notes = '" + k.zapiski + "', section_id = (SELECT id FROM sections WHERE name = '" + k.udk + "'), year = " + k.leto + ", author = '" + k.avtor + "', publisher = '" + k.zalozba + "', lost = " + k.izgubljena + " WHERE id = " + id + ";";
 
                 com.ExecuteNonQuery();
 

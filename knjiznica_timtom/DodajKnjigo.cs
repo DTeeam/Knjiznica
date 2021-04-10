@@ -63,7 +63,7 @@ namespace knjiznica_timtom
             else
             {
                 DialogResult dialogResult = MessageBox.Show("Kategorija " + udkS +
-                    " še ne obstaja.Ali jo želite dodati sedaj ? ", "Napaka", MessageBoxButtons.YesNo);
+                    " še ne obstaja. Ali jo želite dodati sedaj? ", "Napaka", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     db.addSection(k);

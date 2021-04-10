@@ -15,11 +15,12 @@ namespace knjiznica_timtom
         List<Sekcija> sekcije;
         Knjiga k = new Knjiga();
         DodajKnjigo add = new DodajKnjigo();
+        KnjigeForm knjigaForm;
         database_update_books_class db = new database_update_books_class();
         database_add_books_class dbS = new database_add_books_class();
         List<Knjiga> knjigeList = new List<Knjiga>();
         int bookID = 0;
-        public PosodobiKnjigo(int id)
+        public PosodobiKnjigo(int id, KnjigeForm knjigeForm)
         {
             InitializeComponent();
             bookID = id;
@@ -27,9 +28,10 @@ namespace knjiznica_timtom
             knjigeList = db.getBooks(bookID);
             updateUDK();
             fillFields();
+            knjigaForm = knjigeForm;
         }
 
-        private void add_book_button_Click(object sender, EventArgs e)
+        private void update_book_button_Click(object sender, EventArgs e)
         {
             int exists = 0;
 
@@ -42,35 +44,42 @@ namespace knjiznica_timtom
             k.pridobitev = shop_checkedList.SelectedIndex;
             k.izgubljena = lost_checkedList.SelectedIndex;
             k.zapiski = notes_RtextBox.Text;
-            MessageBox.Show(bookID.ToString());
-            foreach (Sekcija item in sekcije)
+            if (k.pridobitev != -1 && k.izgubljena != -1)
             {
-                if (item.ime == udkS)
-                    exists = 1;
-            }
-
-            if (exists == 1)
-            {
-                db.updateBook(k, bookID);
-                MessageBox.Show("Knjiga uspešno posodobljena.");
-            }
-
-            else
-            {
-                DialogResult dialogResult = MessageBox.Show("Kategorija " + udkS +
-                    " še ne obstaja.Ali jo želite dodati sedaj ? ", "Napaka", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
+                foreach (Sekcija item in sekcije)
                 {
-                    dbS.addSection(k);
+                    if (item.ime == udkS)
+                        exists = 1;
+                }
+
+                if (exists == 1)
+                {
                     db.updateBook(k, bookID);
                     MessageBox.Show("Knjiga uspešno posodobljena.");
-
-                    updateUDK();
                 }
-                else if (dialogResult == DialogResult.No)
-                    updateUDK();
+
+                else
+                {
+                    DialogResult dialogResult = MessageBox.Show("Kategorija " + udkS +
+                        " še ne obstaja. Ali jo želite dodati sedaj? ", "Napaka", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        dbS.addSection(k);
+                        db.updateBook(k, bookID);
+
+                        MessageBox.Show("Knjiga uspešno posodobljena.");
+
+                        updateUDK();
+                    }
+                    else if (dialogResult == DialogResult.No)
+                        updateUDK();
+                }
+                knjigaForm.reloadKnjige();
+                this.Close();
+
             }
-            add.Update();
+            else
+                MessageBox.Show("Prosim izpolnite polja Pridobitev in Izgubljena."); 
         }
         private void fillFields()
         {
@@ -81,8 +90,6 @@ namespace knjiznica_timtom
                 udk_combo.Text = item.udk;
                 year_numUpDown.Value = item.leto;
                 publisher_textBox.Text = item.zalozba;
-                shop_checkedList.SetItemChecked(item.pridobitev, true);
-                lost_checkedList.SetItemChecked(item.izgubljena, true);
                 notes_RtextBox.Text = item.zapiski;
             }
         }
@@ -91,6 +98,19 @@ namespace knjiznica_timtom
             udk_combo.Items.Clear();
             foreach (Sekcija item in sekcije)
                 udk_combo.Items.Add(item.ime);
+        }
+        private void shop_checkedList_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (e.NewValue == CheckState.Checked)
+                for (int ix = 0; ix < shop_checkedList.Items.Count; ++ix)
+                    if (e.Index != ix) shop_checkedList.SetItemChecked(ix, false);
+        }
+
+        private void lost_checkedList_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (e.NewValue == CheckState.Checked)
+                for (int ix = 0; ix < lost_checkedList.Items.Count; ++ix)
+                    if (e.Index != ix) lost_checkedList.SetItemChecked(ix, false);
         }
     }
 }

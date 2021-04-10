@@ -46,7 +46,7 @@ namespace knjiznica_timtom
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.add_book_button = new System.Windows.Forms.Button();
+            this.update_book_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.year_numUpDown)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,6 +80,7 @@ namespace knjiznica_timtom
             this.lost_checkedList.Name = "lost_checkedList";
             this.lost_checkedList.Size = new System.Drawing.Size(120, 34);
             this.lost_checkedList.TabIndex = 36;
+            this.lost_checkedList.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.lost_checkedList_ItemCheck);
             // 
             // shop_checkedList
             // 
@@ -93,6 +94,7 @@ namespace knjiznica_timtom
             this.shop_checkedList.Name = "shop_checkedList";
             this.shop_checkedList.Size = new System.Drawing.Size(120, 49);
             this.shop_checkedList.TabIndex = 35;
+            this.shop_checkedList.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.shop_checkedList_ItemCheck);
             // 
             // year_numUpDown
             // 
@@ -219,15 +221,15 @@ namespace knjiznica_timtom
             this.label2.TabIndex = 22;
             this.label2.Text = "Naslov:";
             // 
-            // add_book_button
+            // update_book_button
             // 
-            this.add_book_button.Location = new System.Drawing.Point(144, 403);
-            this.add_book_button.Name = "add_book_button";
-            this.add_book_button.Size = new System.Drawing.Size(118, 58);
-            this.add_book_button.TabIndex = 21;
-            this.add_book_button.Text = "Dodaj knjigo";
-            this.add_book_button.UseVisualStyleBackColor = true;
-            this.add_book_button.Click += new System.EventHandler(this.add_book_button_Click);
+            this.update_book_button.Location = new System.Drawing.Point(144, 403);
+            this.update_book_button.Name = "update_book_button";
+            this.update_book_button.Size = new System.Drawing.Size(118, 58);
+            this.update_book_button.TabIndex = 21;
+            this.update_book_button.Text = "Shrani spremembe";
+            this.update_book_button.UseVisualStyleBackColor = true;
+            this.update_book_button.Click += new System.EventHandler(this.update_book_button_Click);
             // 
             // PosodobiKnjigo
             // 
@@ -251,7 +253,7 @@ namespace knjiznica_timtom
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.add_book_button);
+            this.Controls.Add(this.update_book_button);
             this.Name = "PosodobiKnjigo";
             this.Text = "PosodobiKnjigo";
             ((System.ComponentModel.ISupportInitialize)(this.year_numUpDown)).EndInit();
@@ -279,6 +281,6 @@ namespace knjiznica_timtom
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button add_book_button;
+        private System.Windows.Forms.Button update_book_button;
     }
 }
