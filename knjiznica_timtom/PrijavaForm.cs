@@ -33,5 +33,11 @@ namespace knjiznica_timtom
             else
                 MessageBox.Show("Napačni podatki");
         }
+
+        private void registration_button_Click(object sender, EventArgs e)
+        {
+            var registracija = new RegistracijaForm();
+            registracija.Show();
+        }
     }
 }

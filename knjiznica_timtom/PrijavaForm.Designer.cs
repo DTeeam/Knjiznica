@@ -35,51 +35,47 @@ namespace knjiznica_timtom
             this.label2 = new System.Windows.Forms.Label();
             this.login_button = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.registration_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // user_text
             // 
-            this.user_text.Location = new System.Drawing.Point(194, 197);
-            this.user_text.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.user_text.Location = new System.Drawing.Point(146, 160);
             this.user_text.Name = "user_text";
-            this.user_text.Size = new System.Drawing.Size(132, 22);
+            this.user_text.Size = new System.Drawing.Size(100, 20);
             this.user_text.TabIndex = 0;
             // 
             // pass_text
             // 
-            this.pass_text.Location = new System.Drawing.Point(194, 305);
-            this.pass_text.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pass_text.Location = new System.Drawing.Point(146, 248);
             this.pass_text.Name = "pass_text";
             this.pass_text.PasswordChar = '*';
-            this.pass_text.Size = new System.Drawing.Size(132, 22);
+            this.pass_text.Size = new System.Drawing.Size(100, 20);
             this.pass_text.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(55, 201);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(41, 163);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 17);
+            this.label1.Size = new System.Drawing.Size(89, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Uporabniško ime:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(55, 308);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(41, 250);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 17);
+            this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Geslo:";
             // 
             // login_button
             // 
-            this.login_button.Location = new System.Drawing.Point(145, 395);
-            this.login_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.login_button.Location = new System.Drawing.Point(109, 321);
             this.login_button.Name = "login_button";
-            this.login_button.Size = new System.Drawing.Size(100, 28);
+            this.login_button.Size = new System.Drawing.Size(75, 23);
             this.login_button.TabIndex = 4;
             this.login_button.Text = "Prijavi";
             this.login_button.UseVisualStyleBackColor = true;
@@ -89,17 +85,29 @@ namespace knjiznica_timtom
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(139, 61);
+            this.label3.Location = new System.Drawing.Point(104, 50);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 36);
+            this.label3.Size = new System.Drawing.Size(86, 29);
             this.label3.TabIndex = 5;
             this.label3.Text = "Prijava";
             // 
+            // registration_button
+            // 
+            this.registration_button.Location = new System.Drawing.Point(209, 364);
+            this.registration_button.Name = "registration_button";
+            this.registration_button.Size = new System.Drawing.Size(75, 23);
+            this.registration_button.TabIndex = 6;
+            this.registration_button.Text = "Registracija";
+            this.registration_button.UseVisualStyleBackColor = true;
+            this.registration_button.Click += new System.EventHandler(this.registration_button_Click);
+            // 
             // PrijavaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 491);
+            this.ClientSize = new System.Drawing.Size(296, 399);
+            this.Controls.Add(this.registration_button);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.login_button);
             this.Controls.Add(this.label2);
@@ -107,7 +115,6 @@ namespace knjiznica_timtom
             this.Controls.Add(this.pass_text);
             this.Controls.Add(this.user_text);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "PrijavaForm";
             this.Text = "Prijava";
             this.ResumeLayout(false);
@@ -123,6 +130,7 @@ namespace knjiznica_timtom
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button login_button;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button registration_button;
     }
 }
 
