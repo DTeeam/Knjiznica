@@ -33,6 +33,7 @@ namespace knjiznica_timtom
                 db.registerUser(admin);
                 MessageBox.Show("Registracija uspešna.");
                 this.Close();
+
             }
         }
     }
