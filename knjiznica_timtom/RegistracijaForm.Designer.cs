@@ -30,7 +30,7 @@ namespace knjiznica_timtom
         private void InitializeComponent()
         {
             this.label18 = new System.Windows.Forms.Label();
-            this.dodaj_clana = new System.Windows.Forms.Button();
+            this.register = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pass_text = new System.Windows.Forms.TextBox();
@@ -50,16 +50,16 @@ namespace knjiznica_timtom
             this.label18.TabIndex = 44;
             this.label18.Text = "Registracija";
             // 
-            // dodaj_clana
+            // register
             // 
-            this.dodaj_clana.Location = new System.Drawing.Point(183, 246);
-            this.dodaj_clana.Margin = new System.Windows.Forms.Padding(2);
-            this.dodaj_clana.Name = "dodaj_clana";
-            this.dodaj_clana.Size = new System.Drawing.Size(119, 19);
-            this.dodaj_clana.TabIndex = 43;
-            this.dodaj_clana.Text = "Registriraj";
-            this.dodaj_clana.UseVisualStyleBackColor = true;
-            this.dodaj_clana.Click += new System.EventHandler(this.dodaj_clana_Click);
+            this.register.Location = new System.Drawing.Point(183, 246);
+            this.register.Margin = new System.Windows.Forms.Padding(2);
+            this.register.Name = "register";
+            this.register.Size = new System.Drawing.Size(119, 19);
+            this.register.TabIndex = 43;
+            this.register.Text = "Registriraj";
+            this.register.UseVisualStyleBackColor = true;
+            this.register.Click += new System.EventHandler(this.register_Click);
             // 
             // label2
             // 
@@ -123,7 +123,7 @@ namespace knjiznica_timtom
             this.Controls.Add(this.pass_text);
             this.Controls.Add(this.user_text);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.dodaj_clana);
+            this.Controls.Add(this.register);
             this.Name = "RegistracijaForm";
             this.Text = "RegistracijaForm";
             this.ResumeLayout(false);
@@ -134,7 +134,7 @@ namespace knjiznica_timtom
         #endregion
 
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button dodaj_clana;
+        private System.Windows.Forms.Button register;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox pass_text;

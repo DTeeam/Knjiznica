@@ -68,6 +68,7 @@
     <Compile Include="ClaniClass.cs" />
     <Compile Include="Classes.cs" />
     <Compile Include="database_add_books_class.cs" />
+    <Compile Include="database_registration_class.cs" />
     <Compile Include="database_update_books_class.cs" />
     <Compile Include="DBClass.cs" />
     <Compile Include="DodajKnjigo.cs">
