@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NsExcel = Microsoft.Office.Interop.Excel;
 
 namespace knjiznica_timtom
 {
@@ -466,6 +467,62 @@ namespace knjiznica_timtom
         public void reloadKnjige()
         {
             fillListView();
+        }
+
+        public void ListToExcel(List<Knjiga> list)
+        {
+            NsExcel.ApplicationClass excapp = new Microsoft.Office.Interop.Excel.ApplicationClass();        
+            excapp.Visible = true;
+
+            var workbook = excapp.Workbooks.Add(NsExcel.XlWBATemplate.xlWBATWorksheet);
+
+            var sheet = (NsExcel.Worksheet)workbook.Sheets[1];
+
+            string cellName;
+            int counter = 1;
+
+            cellName = "A" + counter.ToString();
+            var range = sheet.get_Range(cellName, cellName);
+            range.Value2 = "Inventarna številka";
+
+            cellName = "B" + counter.ToString();
+            range = sheet.get_Range(cellName, cellName);
+            range.Value2 = "Naslov";
+
+            cellName = "C" + counter.ToString();
+            range = sheet.get_Range(cellName, cellName);
+            range.Value2 = "Avtor";
+
+            cellName = "D" + counter.ToString();
+            range = sheet.get_Range(cellName, cellName);
+            range.Value2 = "Založba";
+
+            counter++;
+
+            foreach (Knjiga item in list)
+            {
+                cellName = "A" + counter.ToString();
+                range = sheet.get_Range(cellName, cellName);
+                range.Value2 = item.inventarna_stevilka;
+
+                cellName = "B" + counter.ToString();
+                range = sheet.get_Range(cellName, cellName);
+                range.Value2 = item.naslov;
+
+                cellName = "C" + counter.ToString();
+                range = sheet.get_Range(cellName, cellName);
+                range.Value2 = item.avtor;
+
+                cellName = "D" + counter.ToString();
+                range = sheet.get_Range(cellName, cellName);
+                range.Value2 = item.zalozba;
+                ++counter;
+            }
+        }
+
+        private void excel_button_Click(object sender, EventArgs e)
+        {
+            ListToExcel(booklist);
         }
     }
 
