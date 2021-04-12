@@ -14,7 +14,6 @@ namespace knjiznica_timtom
     {
         List<Sekcija> sekcije;
         Knjiga k = new Knjiga();
-        DodajKnjigo add = new DodajKnjigo();
         KnjigeForm knjigaForm;
         database_update_books_class db = new database_update_books_class();
         database_add_books_class dbS = new database_add_books_class();
@@ -40,46 +39,59 @@ namespace knjiznica_timtom
             k.udk = udk_combo.Text;
             string udkS = udk_combo.Text;
             k.leto = Convert.ToInt32(year_numUpDown.Value);
+            k.pridobitev = shop_checkedList.TabIndex;
             k.zalozba = publisher_textBox.Text;
-            k.pridobitev = shop_checkedList.SelectedIndex;
-            k.izgubljena = lost_checkedList.SelectedIndex;
             k.zapiski = notes_RtextBox.Text;
+
+            if (lost_checkedList.Checked == true)
+                k.izgubljena = 1;
+            else
+                k.izgubljena = 0;
+
+            if (nakupRadio.Checked == true)
+                k.pridobitev = 0;
+            else if (dariloRadio.Checked == true)
+                k.pridobitev = 1;
+            else
+                k.pridobitev = 2;
+
+
             if (k.pridobitev != -1 && k.izgubljena != -1)
-            {
-                foreach (Sekcija item in sekcije)
-                {
-                    if (item.ime == udkS)
-                        exists = 1;
-                }
+             {
+                 foreach (Sekcija item in sekcije)
+                 {
+                     if (item.ime == udkS)
+                         exists = 1;
+                 }
 
-                if (exists == 1)
-                {
-                    db.updateBook(k, bookID);
-                    MessageBox.Show("Knjiga uspešno posodobljena.");
-                }
+                 if (exists == 1)
+                 {
+                     db.updateBook(k, bookID);
+                     MessageBox.Show("Knjiga uspešno posodobljena.");
+                 }
 
-                else
-                {
-                    DialogResult dialogResult = MessageBox.Show("Kategorija " + udkS +
-                        " še ne obstaja. Ali jo želite dodati sedaj? ", "Napaka", MessageBoxButtons.YesNo);
-                    if (dialogResult == DialogResult.Yes)
-                    {
-                        dbS.addSection(k);
-                        db.updateBook(k, bookID);
+                 else
+                 {
+                     DialogResult dialogResult = MessageBox.Show("Kategorija " + udkS +
+                         " še ne obstaja. Ali jo želite dodati sedaj? ", "Napaka", MessageBoxButtons.YesNo);
+                     if (dialogResult == DialogResult.Yes)
+                     {
+                         dbS.addSection(k);
+                         db.updateBook(k, bookID);
 
-                        MessageBox.Show("Knjiga uspešno posodobljena.");
+                         MessageBox.Show("Knjiga uspešno posodobljena.");
 
-                        updateUDK();
-                    }
-                    else if (dialogResult == DialogResult.No)
-                        updateUDK();
-                }
-                knjigaForm.reloadKnjige();
+                         updateUDK();
+                     }
+                     else if (dialogResult == DialogResult.No)
+                         updateUDK();
+                 }
+                 knjigaForm.reloadKnjige();
                 this.Close();
 
-            }
-            else
-                MessageBox.Show("Prosim izpolnite polja Pridobitev in Izgubljena."); 
+             }
+             else
+                 MessageBox.Show("Prosim izpolnite polja Pridobitev in Izgubljena."); 
         }
         private void fillFields()
         {
@@ -91,6 +103,18 @@ namespace knjiznica_timtom
                 year_numUpDown.Value = item.leto;
                 publisher_textBox.Text = item.zalozba;
                 notes_RtextBox.Text = item.zapiski;
+
+                if (item.izgubljena == 1)
+                    lost_checkedList.Checked = true;
+                else
+                    lost_checkedList.Checked = false;
+
+                if (item.pridobitev == 0)
+                    nakupRadio.Checked = true;
+                else if (k.pridobitev == 1)
+                    dariloRadio.Checked = true;
+                else
+                    ostaloRadio.Checked = true;
             }
         }
         private void updateUDK()
@@ -98,19 +122,6 @@ namespace knjiznica_timtom
             udk_combo.Items.Clear();
             foreach (Sekcija item in sekcije)
                 udk_combo.Items.Add(item.ime);
-        }
-        private void shop_checkedList_ItemCheck(object sender, ItemCheckEventArgs e)
-        {
-            if (e.NewValue == CheckState.Checked)
-                for (int ix = 0; ix < shop_checkedList.Items.Count; ++ix)
-                    if (e.Index != ix) shop_checkedList.SetItemChecked(ix, false);
-        }
-
-        private void lost_checkedList_ItemCheck(object sender, ItemCheckEventArgs e)
-        {
-            if (e.NewValue == CheckState.Checked)
-                for (int ix = 0; ix < lost_checkedList.Items.Count; ++ix)
-                    if (e.Index != ix) lost_checkedList.SetItemChecked(ix, false);
         }
     }
 }

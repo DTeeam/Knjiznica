@@ -46,6 +46,11 @@ namespace knjiznica_timtom
         {
             if (book_listView.SelectedItems.Count == 0)
                 MessageBox.Show("Prosim izberite knjigo za urejanje.");
+            else
+            {
+                var update = new PosodobiKnjigo(id, this);
+                update.Show();
+            }
         }
 
         private void delete_button_Click(object sender, EventArgs e)
@@ -448,7 +453,7 @@ namespace knjiznica_timtom
 
         private void insert_button_Click(object sender, EventArgs e)
         {
-            var dodaj = new DodajKnjigo();
+            var dodaj = new DodajKnjigo(this);
             dodaj.Show();
 
             spremembe = true;

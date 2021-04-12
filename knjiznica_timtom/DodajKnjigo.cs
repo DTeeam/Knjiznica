@@ -15,12 +15,14 @@ namespace knjiznica_timtom
         List<Sekcija> sekcije;
         Knjiga k = new Knjiga();
         database_add_books_class db = new database_add_books_class();
-        public DodajKnjigo()
+        KnjigeForm knjigaForm;
+        public DodajKnjigo(KnjigeForm knjigeForm)
         {
             InitializeComponent();
 
             sekcije = db.getSections();
             updateUDK();
+            knjigaForm = knjigeForm;
         }
 
         private void updateUDK()
@@ -43,9 +45,19 @@ namespace knjiznica_timtom
             string udkS = udk_combo.Text;
             k.leto = Convert.ToInt32(year_numUpDown.Value);
             k.zalozba = publisher_textBox.Text;
-            k.pridobitev = shop_checkedList.SelectedIndex;
-            k.izgubljena = lost_checkedList.SelectedIndex;
             k.zapiski = notes_RtextBox.Text;
+
+            if (lost_checkedList.Checked == true)
+                k.izgubljena = 1;
+            else
+                k.izgubljena = 0;
+
+            if (nakupRadio.Checked == true)
+                k.pridobitev = 0;
+            else if (dariloRadio.Checked == true)
+                k.pridobitev = 1;
+            else
+                k.pridobitev = 2;
 
             foreach (Sekcija item in sekcije)
             {
@@ -58,6 +70,7 @@ namespace knjiznica_timtom
                 db.addBook(k);
                 clearAll();
                 MessageBox.Show("Knjiga uspešno dodana.");
+                knjigaForm.reloadKnjige();
             }
 
             else
@@ -71,6 +84,7 @@ namespace knjiznica_timtom
                     updateUDK();
                     clearAll();
                     MessageBox.Show("Knjiga uspešno dodana.");
+                    knjigaForm.reloadKnjige();
                 }
                 else if (dialogResult == DialogResult.No)
                     updateUDK();
@@ -84,23 +98,12 @@ namespace knjiznica_timtom
             udk_combo.Text = null;
             year_numUpDown.Value = 1900;
             publisher_textBox.Clear();
-            shop_checkedList.Items.Clear();
-            lost_checkedList.Items.Clear();
+            dariloRadio.Checked = true;
+            dariloRadio.Checked = false;
+            lost_checkedList.Checked = false;
             notes_RtextBox.Clear();
+            
         }
 
-        private void shop_checkedList_ItemCheck(object sender, ItemCheckEventArgs e)
-        {
-            if (e.NewValue == CheckState.Checked)
-                for (int ix = 0; ix < shop_checkedList.Items.Count; ++ix)
-                    if (e.Index != ix) shop_checkedList.SetItemChecked(ix, false);
-        }
-
-        private void lost_checkedList_ItemCheck(object sender, ItemCheckEventArgs e)
-        {
-            if (e.NewValue == CheckState.Checked)
-                for (int ix = 0; ix < lost_checkedList.Items.Count; ++ix)
-                    if (e.Index != ix) lost_checkedList.SetItemChecked(ix, false);
-        }
     }
 }
