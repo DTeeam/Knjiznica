@@ -105,6 +105,7 @@ namespace knjiznica_timtom
             this.label17 = new System.Windows.Forms.Label();
             this.sur_text = new System.Windows.Forms.TextBox();
             this.name_text = new System.Windows.Forms.TextBox();
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.knjige.SuspendLayout();
             this.clani.SuspendLayout();
@@ -152,7 +153,7 @@ namespace knjiznica_timtom
             // 
             // edit
             // 
-            this.edit.Location = new System.Drawing.Point(629, 443);
+            this.edit.Location = new System.Drawing.Point(768, 452);
             this.edit.Name = "edit";
             this.edit.Size = new System.Drawing.Size(126, 24);
             this.edit.TabIndex = 14;
@@ -161,7 +162,7 @@ namespace knjiznica_timtom
             // 
             // insert
             // 
-            this.insert.Location = new System.Drawing.Point(629, 394);
+            this.insert.Location = new System.Drawing.Point(768, 403);
             this.insert.Name = "insert";
             this.insert.Size = new System.Drawing.Size(126, 26);
             this.insert.TabIndex = 13;
@@ -175,15 +176,16 @@ namespace knjiznica_timtom
             this.st,
             this.columnHeader1,
             this.columnHeader2,
+            this.columnHeader11,
             this.columnHeader3});
             this.book_listView.FullRowSelect = true;
             this.book_listView.HideSelection = false;
             this.book_listView.LabelEdit = true;
-            this.book_listView.Location = new System.Drawing.Point(32, 164);
+            this.book_listView.Location = new System.Drawing.Point(31, 170);
             this.book_listView.Margin = new System.Windows.Forms.Padding(4);
             this.book_listView.MultiSelect = false;
             this.book_listView.Name = "book_listView";
-            this.book_listView.Size = new System.Drawing.Size(590, 306);
+            this.book_listView.Size = new System.Drawing.Size(730, 306);
             this.book_listView.TabIndex = 12;
             this.book_listView.TileSize = new System.Drawing.Size(10, 10);
             this.book_listView.UseCompatibleStateImageBehavior = false;
@@ -888,6 +890,11 @@ namespace knjiznica_timtom
             this.name_text.Size = new System.Drawing.Size(176, 22);
             this.name_text.TabIndex = 17;
             // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Založba:";
+            this.columnHeader11.Width = 126;
+            // 
             // KnjigeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -995,5 +1002,6 @@ namespace knjiznica_timtom
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button edit;
         private System.Windows.Forms.Button insert;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
     }
 }

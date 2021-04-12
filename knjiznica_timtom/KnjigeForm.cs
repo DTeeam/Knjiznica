@@ -86,12 +86,13 @@ namespace knjiznica_timtom
 
                 newList.SubItems.Add(a.naslov);
                 newList.SubItems.Add(a.avtor);
+                newList.SubItems.Add(a.zalozba);
                 newList.SubItems.Add("");
 
                 if (a.zasedena == 1)
-                    newList.SubItems[3].BackColor = Color.Red;
+                    newList.SubItems[4].BackColor = Color.Red;
                 else
-                    newList.SubItems[3].BackColor = Color.Green;
+                    newList.SubItems[4].BackColor = Color.Green;
 
                 book_listView.Items.Add(newList);
             }
@@ -143,8 +144,6 @@ namespace knjiznica_timtom
 
                 book_list_iz.Items.Add(newList);
             }
-
-            spremembe = true;
         }
 
         private void clani_combo_SelectedIndexChanged(object sender, EventArgs e)
@@ -227,6 +226,7 @@ namespace knjiznica_timtom
                 izposoje_listview.SelectedItems.Clear();
             }
             update_list();
+            spremembe = true;
         }
 
         private void izposoja_user_tab_Enter(object sender, EventArgs e)
@@ -335,6 +335,7 @@ namespace knjiznica_timtom
             update_list();
 
             booklist_zaiz.Items.Clear();
+            spremembe = true;
 
             dodaj_na_seznam.Enabled = false;
             odstranu_iz_seznama.Enabled = false;
@@ -400,6 +401,9 @@ namespace knjiznica_timtom
                 id = sekcije[section_combo.SelectedIndex].id;
             }
 
+            section_combo.SelectedIndex = 0;
+            search_text.Text = "";
+
             searching(searchstring, id);
         }
 
@@ -444,6 +448,8 @@ namespace knjiznica_timtom
             var dodaj = new DodajKnjigo();
             //dodaj.FormClosed += (s, args) => this.Close();
             dodaj.Show();
+
+            spremembe = true;
         }
     }
 }
