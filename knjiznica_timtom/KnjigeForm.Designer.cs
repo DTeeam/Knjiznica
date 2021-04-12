@@ -107,6 +107,14 @@ namespace knjiznica_timtom
             this.naslov_c_text = new System.Windows.Forms.RichTextBox();
             this.notes_c_text = new System.Windows.Forms.RichTextBox();
             this.excel_button = new System.Windows.Forms.Button();
+            this.stat = new System.Windows.Forms.TabPage();
+            this.leto1 = new System.Windows.Forms.NumericUpDown();
+            this.leto2 = new System.Windows.Forms.NumericUpDown();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.stat_button = new System.Windows.Forms.Button();
+            this.label22 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.knjige.SuspendLayout();
             this.clani.SuspendLayout();
@@ -115,6 +123,9 @@ namespace knjiznica_timtom
             this.izposoja_user_tab.SuspendLayout();
             this.changedata_user_tab.SuspendLayout();
             this.dodajclana.SuspendLayout();
+            this.stat.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.leto1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.leto2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -122,6 +133,7 @@ namespace knjiznica_timtom
             this.tabControl1.Controls.Add(this.knjige);
             this.tabControl1.Controls.Add(this.clani);
             this.tabControl1.Controls.Add(this.dodajclana);
+            this.tabControl1.Controls.Add(this.stat);
             this.tabControl1.Location = new System.Drawing.Point(19, 17);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
@@ -911,6 +923,114 @@ namespace knjiznica_timtom
             this.excel_button.UseVisualStyleBackColor = true;
             this.excel_button.Click += new System.EventHandler(this.excel_button_Click);
             // 
+            // stat
+            // 
+            this.stat.Controls.Add(this.label22);
+            this.stat.Controls.Add(this.stat_button);
+            this.stat.Controls.Add(this.label21);
+            this.stat.Controls.Add(this.label20);
+            this.stat.Controls.Add(this.label19);
+            this.stat.Controls.Add(this.leto2);
+            this.stat.Controls.Add(this.leto1);
+            this.stat.Location = new System.Drawing.Point(4, 25);
+            this.stat.Name = "stat";
+            this.stat.Padding = new System.Windows.Forms.Padding(3);
+            this.stat.Size = new System.Drawing.Size(1027, 495);
+            this.stat.TabIndex = 3;
+            this.stat.Text = "Statistika";
+            this.stat.UseVisualStyleBackColor = true;
+            // 
+            // leto1
+            // 
+            this.leto1.Location = new System.Drawing.Point(76, 163);
+            this.leto1.Maximum = new decimal(new int[] {
+            4000,
+            0,
+            0,
+            0});
+            this.leto1.Minimum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this.leto1.Name = "leto1";
+            this.leto1.Size = new System.Drawing.Size(148, 22);
+            this.leto1.TabIndex = 0;
+            this.leto1.Value = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            // 
+            // leto2
+            // 
+            this.leto2.Location = new System.Drawing.Point(307, 163);
+            this.leto2.Maximum = new decimal(new int[] {
+            4000,
+            0,
+            0,
+            0});
+            this.leto2.Minimum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this.leto2.Name = "leto2";
+            this.leto2.Size = new System.Drawing.Size(148, 22);
+            this.leto2.TabIndex = 1;
+            this.leto2.Value = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(28, 114);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(77, 17);
+            this.label19.TabIndex = 2;
+            this.label19.Text = "Vnesite leti";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(250, 165);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(24, 17);
+            this.label20.TabIndex = 3;
+            this.label20.Text = "do";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(28, 165);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(27, 17);
+            this.label21.TabIndex = 4;
+            this.label21.Text = "Od";
+            // 
+            // stat_button
+            // 
+            this.stat_button.Location = new System.Drawing.Point(31, 217);
+            this.stat_button.Name = "stat_button";
+            this.stat_button.Size = new System.Drawing.Size(75, 23);
+            this.stat_button.TabIndex = 5;
+            this.stat_button.Text = "Ustvari";
+            this.stat_button.UseVisualStyleBackColor = true;
+            this.stat_button.Click += new System.EventHandler(this.stat_button_Click);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(25, 35);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(225, 36);
+            this.label22.TabIndex = 6;
+            this.label22.Text = "Dobite statistiko";
+            // 
             // KnjigeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -936,6 +1056,10 @@ namespace knjiznica_timtom
             this.changedata_user_tab.PerformLayout();
             this.dodajclana.ResumeLayout(false);
             this.dodajclana.PerformLayout();
+            this.stat.ResumeLayout(false);
+            this.stat.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.leto1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.leto2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1020,5 +1144,13 @@ namespace knjiznica_timtom
         private System.Windows.Forms.RichTextBox notes_c_text;
         private System.Windows.Forms.RichTextBox naslov_c_text;
         private System.Windows.Forms.Button excel_button;
+        private System.Windows.Forms.TabPage stat;
+        private System.Windows.Forms.Button stat_button;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.NumericUpDown leto2;
+        private System.Windows.Forms.NumericUpDown leto1;
+        private System.Windows.Forms.Label label22;
     }
 }

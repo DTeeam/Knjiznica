@@ -524,6 +524,19 @@ namespace knjiznica_timtom
         {
             ListToExcel(booklist);
         }
+
+        private void stat_button_Click(object sender, EventArgs e)
+        {
+            if (leto2.Value > leto1.Value)
+            {
+                Stat_form lol = new Stat_form(Convert.ToInt32(leto1.Value), Convert.ToInt32(leto2.Value));
+
+                lol.Show();
+            }
+
+            else
+                MessageBox.Show("Druga letnica mora biti večja kot prva");
+        }
     }
 
 }
