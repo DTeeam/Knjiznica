@@ -56,6 +56,8 @@ namespace knjiznica_timtom
         private void book_listView_SelectedIndexChanged(object sender, EventArgs e)
         {
             string item = string.Empty;
+            
+
 
             for (int i = 0; i < book_listView.SelectedItems.Count; i++)
             {
@@ -67,6 +69,7 @@ namespace knjiznica_timtom
                     k.inventarna_stevilka = id;
                 }
             }
+            
         }
 
         private void fillListView()
@@ -444,12 +447,26 @@ namespace knjiznica_timtom
 
         private void insert_button_Click(object sender, EventArgs e)
         {
-            //this.Hide();
             var dodaj = new DodajKnjigo();
-            //dodaj.FormClosed += (s, args) => this.Close();
             dodaj.Show();
 
             spremembe = true;
         }
+
+        private void edit_Click(object sender, EventArgs e)
+        {
+            if (id != 0)
+            {
+                var posodobi = new PosodobiKnjigo(id, this);
+                posodobi.Show();
+            }
+            else
+                MessageBox.Show("Prosim, izberite knjigo za urejanje.");
+        }
+        public void reloadKnjige()
+        {
+            fillListView();
+        }
     }
+
 }

@@ -14,7 +14,7 @@ namespace knjiznica_timtom
     {
         List<Sekcija> sekcije;
         Knjiga k = new Knjiga();
-        database_addEdit_books_class db = new database_addEdit_books_class();
+        database_add_books_class db = new database_add_books_class();
         public DodajKnjigo()
         {
             InitializeComponent();
@@ -63,7 +63,7 @@ namespace knjiznica_timtom
             else
             {
                 DialogResult dialogResult = MessageBox.Show("Kategorija " + udkS +
-                    " še ne obstaja.Ali jo želite dodati sedaj ? ", "Napaka", MessageBoxButtons.YesNo);
+                    " še ne obstaja. Ali jo želite dodati sedaj? ", "Napaka", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     db.addSection(k);

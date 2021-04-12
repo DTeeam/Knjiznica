@@ -58,4 +58,10 @@ namespace knjiznica_timtom
         public int id { get; set; }
         public string ime { get; set; }
     }
+    public class Admin
+    {
+        public string upIme { get; set; }
+        public string pass { get; set; }
+        public string repPass { get; set; }
+    }
 }
