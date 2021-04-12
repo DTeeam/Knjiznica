@@ -54,6 +54,7 @@ namespace knjiznica_timtom
                     a.naslov = reader.GetString(1);
                     a.avtor = reader.GetString(6);
                     a.izgubljena = reader.GetInt32(8);
+                    a.zalozba = reader.GetString(7);
 
                     if (reader.IsDBNull(9))
                         a.zasedena = 0;
