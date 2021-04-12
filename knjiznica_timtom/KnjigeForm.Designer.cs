@@ -106,6 +106,7 @@ namespace knjiznica_timtom
             this.name_text = new System.Windows.Forms.TextBox();
             this.naslov_c_text = new System.Windows.Forms.RichTextBox();
             this.notes_c_text = new System.Windows.Forms.RichTextBox();
+            this.excel_button = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.knjige.SuspendLayout();
             this.clani.SuspendLayout();
@@ -130,6 +131,7 @@ namespace knjiznica_timtom
             // 
             // knjige
             // 
+            this.knjige.Controls.Add(this.excel_button);
             this.knjige.Controls.Add(this.edit);
             this.knjige.Controls.Add(this.insert);
             this.knjige.Controls.Add(this.book_listView);
@@ -213,7 +215,7 @@ namespace knjiznica_timtom
             // columnHeader11
             // 
             this.columnHeader11.Text = "Založba:";
-            this.columnHeader11.Width = 126;
+            this.columnHeader11.Width = 111;
             // 
             // columnHeader3
             // 
@@ -899,6 +901,16 @@ namespace knjiznica_timtom
             this.notes_c_text.TabIndex = 19;
             this.notes_c_text.Text = "";
             // 
+            // excel_button
+            // 
+            this.excel_button.Location = new System.Drawing.Point(905, 22);
+            this.excel_button.Name = "excel_button";
+            this.excel_button.Size = new System.Drawing.Size(116, 43);
+            this.excel_button.TabIndex = 15;
+            this.excel_button.Text = "Izvozi v excel";
+            this.excel_button.UseVisualStyleBackColor = true;
+            this.excel_button.Click += new System.EventHandler(this.excel_button_Click);
+            // 
             // KnjigeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1007,5 +1019,6 @@ namespace knjiznica_timtom
         private System.Windows.Forms.RichTextBox add_text;
         private System.Windows.Forms.RichTextBox notes_c_text;
         private System.Windows.Forms.RichTextBox naslov_c_text;
+        private System.Windows.Forms.Button excel_button;
     }
 }
