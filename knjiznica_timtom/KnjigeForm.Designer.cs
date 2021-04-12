@@ -141,7 +141,7 @@ namespace knjiznica_timtom
             this.knjige.Controls.Add(this.search_text);
             this.knjige.Location = new System.Drawing.Point(4, 22);
             this.knjige.Name = "knjige";
-            this.knjige.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.knjige.Padding = new System.Windows.Forms.Padding(2);
             this.knjige.Size = new System.Drawing.Size(768, 400);
             this.knjige.TabIndex = 0;
             this.knjige.Text = "Knjige";
@@ -151,7 +151,7 @@ namespace knjiznica_timtom
             // edit
             // 
             this.edit.Location = new System.Drawing.Point(472, 360);
-            this.edit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.edit.Margin = new System.Windows.Forms.Padding(2);
             this.edit.Name = "edit";
             this.edit.Size = new System.Drawing.Size(94, 20);
             this.edit.TabIndex = 14;
@@ -162,7 +162,7 @@ namespace knjiznica_timtom
             // insert
             // 
             this.insert.Location = new System.Drawing.Point(472, 320);
-            this.insert.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.insert.Margin = new System.Windows.Forms.Padding(2);
             this.insert.Name = "insert";
             this.insert.Size = new System.Drawing.Size(94, 21);
             this.insert.TabIndex = 13;
@@ -241,7 +241,7 @@ namespace knjiznica_timtom
             // insert_button
             // 
             this.insert_button.Location = new System.Drawing.Point(335, 265);
-            this.insert_button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.insert_button.Margin = new System.Windows.Forms.Padding(2);
             this.insert_button.Name = "insert_button";
             this.insert_button.Size = new System.Drawing.Size(80, 19);
             this.insert_button.TabIndex = 4;
@@ -295,7 +295,7 @@ namespace knjiznica_timtom
             this.clani.Controls.Add(this.tabControl2);
             this.clani.Location = new System.Drawing.Point(4, 22);
             this.clani.Name = "clani";
-            this.clani.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.clani.Padding = new System.Windows.Forms.Padding(2);
             this.clani.Size = new System.Drawing.Size(768, 400);
             this.clani.TabIndex = 1;
             this.clani.Text = "Člani";
@@ -772,7 +772,7 @@ namespace knjiznica_timtom
             // 
             // dodaj_clana
             // 
-            this.dodaj_clana.Location = new System.Drawing.Point(118, 340);
+            this.dodaj_clana.Location = new System.Drawing.Point(120, 327);
             this.dodaj_clana.Margin = new System.Windows.Forms.Padding(2);
             this.dodaj_clana.Name = "dodaj_clana";
             this.dodaj_clana.Size = new System.Drawing.Size(119, 19);
@@ -803,7 +803,7 @@ namespace knjiznica_timtom
             // 
             // notes_text
             // 
-            this.notes_text.Location = new System.Drawing.Point(198, 273);
+            this.notes_text.Location = new System.Drawing.Point(198, 255);
             this.notes_text.Margin = new System.Windows.Forms.Padding(2);
             this.notes_text.Name = "notes_text";
             this.notes_text.Size = new System.Drawing.Size(133, 20);
@@ -811,7 +811,7 @@ namespace knjiznica_timtom
             // 
             // mail_text
             // 
-            this.mail_text.Location = new System.Drawing.Point(17, 273);
+            this.mail_text.Location = new System.Drawing.Point(28, 255);
             this.mail_text.Margin = new System.Windows.Forms.Padding(2);
             this.mail_text.Name = "mail_text";
             this.mail_text.Size = new System.Drawing.Size(133, 20);
@@ -847,7 +847,7 @@ namespace knjiznica_timtom
             // 
             // tel_text
             // 
-            this.tel_text.Location = new System.Drawing.Point(17, 180);
+            this.tel_text.Location = new System.Drawing.Point(28, 179);
             this.tel_text.Margin = new System.Windows.Forms.Padding(2);
             this.tel_text.Name = "tel_text";
             this.tel_text.Size = new System.Drawing.Size(133, 20);
@@ -875,7 +875,7 @@ namespace knjiznica_timtom
             // 
             // sur_text
             // 
-            this.sur_text.Location = new System.Drawing.Point(198, 98);
+            this.sur_text.Location = new System.Drawing.Point(198, 92);
             this.sur_text.Margin = new System.Windows.Forms.Padding(2);
             this.sur_text.Name = "sur_text";
             this.sur_text.Size = new System.Drawing.Size(133, 20);
@@ -883,7 +883,7 @@ namespace knjiznica_timtom
             // 
             // name_text
             // 
-            this.name_text.Location = new System.Drawing.Point(17, 98);
+            this.name_text.Location = new System.Drawing.Point(28, 92);
             this.name_text.Margin = new System.Windows.Forms.Padding(2);
             this.name_text.Name = "name_text";
             this.name_text.Size = new System.Drawing.Size(133, 20);

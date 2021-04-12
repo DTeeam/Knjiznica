@@ -36,8 +36,16 @@ namespace knjiznica_timtom
 
         private void registration_button_Click(object sender, EventArgs e)
         {
-            var registracija = new RegistracijaForm();
-            registracija.Show();
+            int id = db.GetAdminUserID(user_text.Text, pass_text.Text);
+
+            if (id != 0)
+            {
+                var registracija = new RegistracijaForm();
+                registracija.Show();
+            }
+
+            else
+                MessageBox.Show("Uporabite validne podatke za registracijo novega uporabnika");
         }
     }
 }
