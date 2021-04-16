@@ -19,7 +19,7 @@ namespace knjiznica_timtom
 
             using (SQLiteCommand com = new SQLiteCommand(conn))
             {
-                com.CommandText = "SELECT user_id, book_id, state, date FROM rents ORDER BY id;";
+                com.CommandText = "SELECT * FROM rents ORDER BY id;";
 
                 SQLiteDataReader reader = com.ExecuteReader();
 
@@ -27,10 +27,11 @@ namespace knjiznica_timtom
                 {
                     Izposoja a = new Izposoja();
 
-                    a.id_clana = reader.GetInt32(0);
-                    a.id_knjige = reader.GetInt32(1);
-                    a.stanje = reader.GetInt32(2);
-                    a.datum_izposoje = reader.GetString(3);
+                    a.id = reader.GetInt32(0);
+                    a.id_clana = reader.GetInt32(1);
+                    a.id_knjige = reader.GetInt32(2);
+                    a.stanje = reader.GetInt32(3);
+                    a.datum_izposoje = reader.GetString(4);
 
                     list.Add(a);
                 }

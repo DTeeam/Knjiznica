@@ -125,7 +125,7 @@ namespace knjiznica_timtom
             this.Controls.Add(this.label18);
             this.Controls.Add(this.register);
             this.Name = "RegistracijaForm";
-            this.Text = "RegistracijaForm";
+            this.Text = "Registracija";
             this.ResumeLayout(false);
             this.PerformLayout();
 

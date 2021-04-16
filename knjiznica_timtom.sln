@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "knjiznica_timtom", "knjizni
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6015F481-5E3C-4C9B-A0C4-D2862A54EDC2}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{4491AAD2-435B-4EBF-8E0F-D61A434B6AC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,8 @@ Global
 		{9DF5847E-7204-4C91-BAA7-357A7CF0EC44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DF5847E-7204-4C91-BAA7-357A7CF0EC44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DF5847E-7204-4C91-BAA7-357A7CF0EC44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4491AAD2-435B-4EBF-8E0F-D61A434B6AC3}.Debug|Any CPU.ActiveCfg = Debug
+		{4491AAD2-435B-4EBF-8E0F-D61A434B6AC3}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

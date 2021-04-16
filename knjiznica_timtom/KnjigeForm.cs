@@ -542,6 +542,11 @@ namespace knjiznica_timtom
             else
                 MessageBox.Show("Druga letnica mora biti večja kot prva");
         }
+
+        private void clani_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

@@ -40,6 +40,7 @@ namespace knjiznica_timtom
             // 
             // user_text
             // 
+            this.user_text.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.user_text.Location = new System.Drawing.Point(146, 160);
             this.user_text.Name = "user_text";
             this.user_text.Size = new System.Drawing.Size(100, 20);
@@ -47,6 +48,7 @@ namespace knjiznica_timtom
             // 
             // pass_text
             // 
+            this.pass_text.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.pass_text.Location = new System.Drawing.Point(146, 248);
             this.pass_text.Name = "pass_text";
             this.pass_text.PasswordChar = '*';
@@ -55,6 +57,7 @@ namespace knjiznica_timtom
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(41, 163);
             this.label1.Name = "label1";
@@ -64,6 +67,7 @@ namespace knjiznica_timtom
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(41, 250);
             this.label2.Name = "label2";
@@ -73,6 +77,7 @@ namespace knjiznica_timtom
             // 
             // login_button
             // 
+            this.login_button.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.login_button.Location = new System.Drawing.Point(109, 321);
             this.login_button.Name = "login_button";
             this.login_button.Size = new System.Drawing.Size(75, 23);
@@ -83,6 +88,7 @@ namespace knjiznica_timtom
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(104, 50);
@@ -94,6 +100,7 @@ namespace knjiznica_timtom
             // 
             // registration_button
             // 
+            this.registration_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.registration_button.Location = new System.Drawing.Point(209, 364);
             this.registration_button.Name = "registration_button";
             this.registration_button.Size = new System.Drawing.Size(75, 23);
