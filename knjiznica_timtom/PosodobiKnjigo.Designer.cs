@@ -29,6 +29,7 @@ namespace knjiznica_timtom
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PosodobiKnjigo));
             this.label1 = new System.Windows.Forms.Label();
             this.notes_RtextBox = new System.Windows.Forms.RichTextBox();
             this.year_numUpDown = new System.Windows.Forms.NumericUpDown();
@@ -286,6 +287,7 @@ namespace knjiznica_timtom
             this.Controls.Add(this.label2);
             this.Controls.Add(this.update_book_button);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PosodobiKnjigo";
             this.Text = "Urejanje";
             ((System.ComponentModel.ISupportInitialize)(this.year_numUpDown)).EndInit();

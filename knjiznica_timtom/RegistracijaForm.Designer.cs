@@ -29,6 +29,7 @@ namespace knjiznica_timtom
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistracijaForm));
             this.label18 = new System.Windows.Forms.Label();
             this.register = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -124,6 +125,7 @@ namespace knjiznica_timtom
             this.Controls.Add(this.user_text);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.register);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegistracijaForm";
             this.Text = "Registracija";
             this.ResumeLayout(false);

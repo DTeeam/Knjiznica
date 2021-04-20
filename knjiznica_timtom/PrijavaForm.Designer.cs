@@ -29,6 +29,7 @@ namespace knjiznica_timtom
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrijavaForm));
             this.user_text = new System.Windows.Forms.TextBox();
             this.pass_text = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -122,6 +123,7 @@ namespace knjiznica_timtom
             this.Controls.Add(this.pass_text);
             this.Controls.Add(this.user_text);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PrijavaForm";
             this.Text = "Prijava";
             this.ResumeLayout(false);

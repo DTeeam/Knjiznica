@@ -28,6 +28,7 @@ namespace knjiznica_timtom
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DodajKnjigo));
             this.add_book_button = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -285,6 +286,7 @@ namespace knjiznica_timtom
             this.Controls.Add(this.label2);
             this.Controls.Add(this.add_book_button);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DodajKnjigo";
             this.Text = "Dodajanje";

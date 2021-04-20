@@ -49,7 +49,7 @@ namespace knjiznica_timtom
             else
             {
                 var update = new PosodobiKnjigo(id, this);
-                update.Show();
+                update.ShowDialog();
             }
         }
 
@@ -476,52 +476,59 @@ namespace knjiznica_timtom
 
         public void ListToExcel(List<Knjiga> list)
         {
-            NsExcel.ApplicationClass excapp = new Microsoft.Office.Interop.Excel.ApplicationClass();        
-            excapp.Visible = true;
-
-            var workbook = excapp.Workbooks.Add(NsExcel.XlWBATemplate.xlWBATWorksheet);
-
-            var sheet = (NsExcel.Worksheet)workbook.Sheets[1];
-
-            string cellName;
-            int counter = 1;
-
-            cellName = "A" + counter.ToString();
-            var range = sheet.get_Range(cellName, cellName);
-            range.Value2 = "Inventarna številka";
-
-            cellName = "B" + counter.ToString();
-            range = sheet.get_Range(cellName, cellName);
-            range.Value2 = "Naslov";
-
-            cellName = "C" + counter.ToString();
-            range = sheet.get_Range(cellName, cellName);
-            range.Value2 = "Avtor";
-
-            cellName = "D" + counter.ToString();
-            range = sheet.get_Range(cellName, cellName);
-            range.Value2 = "Založba";
-
-            counter++;
-
-            foreach (Knjiga item in list)
+            try
             {
+                NsExcel.ApplicationClass excapp = new Microsoft.Office.Interop.Excel.ApplicationClass();
+                excapp.Visible = true;
+
+                var workbook = excapp.Workbooks.Add(NsExcel.XlWBATemplate.xlWBATWorksheet);
+
+                var sheet = (NsExcel.Worksheet)workbook.Sheets[1];
+
+                string cellName;
+                int counter = 1;
+
                 cellName = "A" + counter.ToString();
-                range = sheet.get_Range(cellName, cellName);
-                range.Value2 = item.inventarna_stevilka;
+                var range = sheet.get_Range(cellName, cellName);
+                range.Value2 = "Inventarna številka";
 
                 cellName = "B" + counter.ToString();
                 range = sheet.get_Range(cellName, cellName);
-                range.Value2 = item.naslov;
+                range.Value2 = "Naslov";
 
                 cellName = "C" + counter.ToString();
                 range = sheet.get_Range(cellName, cellName);
-                range.Value2 = item.avtor;
+                range.Value2 = "Avtor";
 
                 cellName = "D" + counter.ToString();
                 range = sheet.get_Range(cellName, cellName);
-                range.Value2 = item.zalozba;
-                ++counter;
+                range.Value2 = "Založba";
+
+                counter++;
+
+                foreach (Knjiga item in list)
+                {
+                    cellName = "A" + counter.ToString();
+                    range = sheet.get_Range(cellName, cellName);
+                    range.Value2 = item.inventarna_stevilka;
+
+                    cellName = "B" + counter.ToString();
+                    range = sheet.get_Range(cellName, cellName);
+                    range.Value2 = item.naslov;
+
+                    cellName = "C" + counter.ToString();
+                    range = sheet.get_Range(cellName, cellName);
+                    range.Value2 = item.avtor;
+
+                    cellName = "D" + counter.ToString();
+                    range = sheet.get_Range(cellName, cellName);
+                    range.Value2 = item.zalozba;
+                    ++counter;
+                }
+            }
+            catch (Exception)
+            {
+                
             }
         }
 
